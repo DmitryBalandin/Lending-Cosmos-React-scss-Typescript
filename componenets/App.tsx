@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './App.css'
+import "./App.css";
 
 export const App = () =>{
         const [count, setCount] = useState(0)
@@ -7,7 +7,7 @@ export const App = () =>{
     return(
         <div>
             <h1>{count}</h1>
-            <button onClick={icremeant}>inc</button>
+            <button onClick={icremeant}>inceу</button>
         </div>
     );
 };
