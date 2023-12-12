@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import classes from "./App.module.scss";
 import { Link, Outlet } from "react-router-dom";
-import About from "../about/About";
+import About from "../../pages/about/About";
+import avatarPng from "@/assets/avatar.png";
+import avatarJpg from "../assets/avatar.jpg";
+import Calendar from "../assets/calendar.svg";
 
 
 export const App = () =>{
@@ -9,6 +12,17 @@ export const App = () =>{
         const icremeant = () => setCount(prev => prev + 1);
     return(
         <div>
+            <div>
+                <img width={100} height={100} src={avatarPng} alt="" />
+                {avatarPng}
+            </div>
+            <div>
+                <img width={100} height={100}  src={avatarJpg} alt="" />
+                {avatarJpg}
+            </div>
+            <div>
+                <Calendar width={100} height={100} fill={'red'} />
+            </div>
             <Link to={"./about"}>about</Link>
             <br />
             <Link to={"./shop"}>shop</Link>
