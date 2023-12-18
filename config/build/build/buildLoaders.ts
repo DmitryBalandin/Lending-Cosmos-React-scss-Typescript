@@ -12,6 +12,11 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         type: 'asset/resource'
     };
 
+    const fontsLoader = {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      };
+
     const svgLoader = {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
@@ -42,6 +47,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     }
 
     return [
+        fontsLoader,
         svgLoader,
         assetLoaders,
         loaderCss,
