@@ -1,13 +1,18 @@
 
+import { ReactNode } from "react";
 import styles from "./styles.module.scss";
 import cl from "classnames";
 
-interface TitleProps { }
+interface TitleProps {
+   
+    size?:"Medium"| "Large",
+    children: ReactNode,
+ }
 
-export const Title: React.FC<TitleProps> = ({ }) => {
+export const Title: React.FC<TitleProps> = ({children, size }) => {
     return (
-        <div className={cl(styles.div)}>
-            213312
-        </div>
+        <h2 className={cl(styles.title, `${styles.title}${size}`)}>
+            {children}
+        </h2>
     )
     }

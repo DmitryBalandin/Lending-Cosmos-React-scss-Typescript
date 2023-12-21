@@ -1,13 +1,17 @@
 
+import { ReactNode } from "react";
 import styles from "./styles.module.scss";
 import cl from "classnames";
 
-interface ButtonProps { }
+interface ButtonProps {
+    onClick:()=> void,
+    children: ReactNode,
+ }
 
-export const Button: React.FC<ButtonProps> = ({ }) => {
+export const Button: React.FC<ButtonProps> = ({onClick,children }) => {
     return (
-        <div className={cl(styles.div)}>
-            213312
-        </div>
+        <button onClick={onClick} className={styles.button}>
+            {children}
+        </button>
     )
     }

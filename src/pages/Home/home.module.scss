@@ -1,8 +1,47 @@
 .section{
-    height: 100vh;
-
+    height:max(100vh - 70px,600px);
+    
+    position: relative;
+    
     &Main{
+        
         background: url("./image/image\ 2\ .jpg") center no-repeat no-repeat;
         background-size: cover;
+        padding: 35px 50px
+        
     }
+    
+    &TitleMain{
+        display:flex;
+        flex-direction: column;
+        // margin: auto;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        div{
+            padding-top: 50px;
+            padding-bottom: 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+    }
+
+    header{
+        width: calc(100% - 100px);
+        position: absolute;
+        display: grid;
+        gap: 30px;
+        grid-template: 1fr/ 1fr auto auto;
+        align-items: center;
+    }
+
+    
+}
+
+.buttonGroup{
+    justify-content: center;
+    display: flex;
+    gap: 20px;
 }

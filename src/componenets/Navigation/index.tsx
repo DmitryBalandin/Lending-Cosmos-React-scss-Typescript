@@ -2,12 +2,28 @@
 import styles from "./styles.module.scss";
 import cl from "classnames";
 
+import { Link } from 'react-router-dom';
+
 interface NavigationProps { }
 
 export const Navigation: React.FC<NavigationProps> = ({ }) => {
     return (
-        <div className={cl(styles.div)}>
-            213312
-        </div>
+        <ul>
+            <li>
+                <Link to="/">
+                    Duskotpia
+                </Link>
+            </li>
+            <li>
+                <Link to="/">
+                    Duskotpia
+                </Link>
+            </li>
+            <li>
+                <Link to="/">
+                    Duskotpia
+                </Link>
+            </li>
+        </ul>
     )
-    }
+}

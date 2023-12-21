@@ -1,4 +1,19 @@
-.div{
-    color: white;
-    font-size: 50px;
+.socialNetworks{
+    display: flex;
+    gap: 2.4rem;
+    align-items: center;
+    &Item{
+        
+    }
+
+    &Link{
+        display: inline-block;
+        color: white;
+        text-decoration: none;
+        
+        &:hover,
+        &:visited{
+            color: white;
+        }
+    }
 }

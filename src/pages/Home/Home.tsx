@@ -11,31 +11,35 @@ import { Navigation } from "@/componenets/Navigation";
 export default function Home() {
     return (
         <section className={cl(styles.section, styles.sectionMain)}>
+
             <header>
                 <Logo />
                 <SocialNetworks />
-                <Button >
+                <Button onClick={() => { }}>
                     Whitepeper
                 </Button>
-                <Navigation />
+            </header>
+            {/* <Navigation /> */}
+
+            <div className={cl(styles.sectionTitleMain)}>
                 <div>
-                    <Title >
-                        FROM DUSK TO DAWN
+                    <Title size="Medium">
+                        From dusk to&nbsp;dawn
                     </Title>
-                </div>
-                <ul>
-                    <li>
-                        <Button >
-                            Mint
-                        </Button>
-                    </li>
+                    <ul className={styles.buttonGroup}>
                         <li>
-                            <Button >
+                            <Button onClick={() => { }}>
                                 Mint
                             </Button>
                         </li>
-                </ul>
-            </header>
+                        <li>
+                            <Button onClick={() => { }}>
+                                Connect Wallet
+                            </Button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </section>
     )
 } 
