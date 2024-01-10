@@ -1,4 +1,56 @@
-.div{
+.navigation {
+    position: fixed;
+    top:50%;
+    left: -135px;
     color: white;
-    font-size: 50px;
+    font: 1.1429rem/1.4 'NeueMachina';
+    font-weight: 700;
+    transform: rotate(90deg);           
+   
+
+    &Item{
+        display: flex;
+        gap:2.7857rem;
+        align-items:end;
+        
+    }
+
+
+    &Value{
+        opacity: 0.7;
+        transition: opacity 0.3s;
+
+        &:hover,
+        &:visited{
+            color: white;
+            opacity: 1.0;
+        }
+        
+        &Active{
+            opacity: 1.0;
+        }
+        
+        &:not(:last-child):after{
+            content: "";
+            margin-left: 39px;
+            background: url(./images/star.svg) center no-repeat;
+            display: inline-block;
+            width: 1.54rem;
+            height: 1.54rem;
+            transform: translateY(+32.5%);
+            opacity: 0.7;
+        }
+    }
+
+    &Link {
+        text-decoration: none;
+        
+
+        &:hover,
+        &:visited {
+            
+            color: white;
+           
+        }
+    }
 }

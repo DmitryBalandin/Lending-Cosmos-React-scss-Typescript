@@ -19,7 +19,7 @@ export default function Home() {
                     Whitepeper
                 </Button>
             </header>
-            {/* <Navigation /> */}
+            <Navigation />
 
             <div className={cl(styles.sectionTitleMain)}>
                 <div>

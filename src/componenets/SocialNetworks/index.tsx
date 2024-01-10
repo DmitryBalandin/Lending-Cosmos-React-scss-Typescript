@@ -41,7 +41,7 @@ export const SocialNetworks: React.FC<SocialNetworksProps> = ({ }) => {
            {socialNetworks.map((socialNetwork) =>(
              <li key={socialNetwork.id} className={styles.socialNetworksItem}>
                 <Link 
-                to={socialNetwork.className} 
+                to={socialNetwork.link} 
                 className={cl(styles.socialNetworksLink,styles[`socialNetworks.${socialNetwork.className}`])}
                 >
                     <img src={socialNetwork.img} alt={`image ${socialNetwork.className}`} />
