@@ -10,36 +10,41 @@ import { Navigation } from "@/componenets/Navigation";
 
 export default function Home() {
     return (
-        <section className={cl(styles.section, styles.sectionMain)}>
+        <div>
+            <section className={cl(styles.section, styles.sectionMain)}>
 
-            <header>
-                <Logo />
-                <SocialNetworks />
-                <Button onClick={() => { }}>
-                    Whitepeper
-                </Button>
-            </header>
-            <Navigation />
+                <header>
+                    <Logo />
+                    <SocialNetworks />
+                    <Button onClick={() => { }}>
+                        Whitepeper
+                    </Button>
+                </header>
+                <Navigation />
 
-            <div className={cl(styles.sectionTitleMain)}>
-                <div>
-                    <Title size="Medium">
-                        From dusk to&nbsp;dawn
-                    </Title>
-                    <ul className={styles.buttonGroup}>
-                        <li>
-                            <Button onClick={() => { }}>
-                                Mint
-                            </Button>
-                        </li>
-                        <li>
-                            <Button onClick={() => { }}>
-                                Connect Wallet
-                            </Button>
-                        </li>
-                    </ul>
+                <div className={cl(styles.sectionTitleMain)}>
+                    <div>
+                        <Title size="Medium">
+                            From dusk to&nbsp;dawn
+                        </Title>
+                        <ul className={styles.buttonGroup}>
+                            <li>
+                                <Button onClick={() => { }}>
+                                    Mint
+                                </Button>
+                            </li>
+                            <li>
+                                <Button onClick={() => { }}>
+                                    Connect Wallet
+                                </Button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section className={cl(styles.section, styles.sectionPlanet)}>
+
+            </section>
+        </div>
     )
 } 

@@ -1,23 +1,30 @@
-.section{
-    height:max(100vh - 70px,600px);
-    
+.section {
+    height: max(100vh - 70px, 600px);
     position: relative;
     
-    &Main{
-        
-        background: url("./image/image\ 2\ .jpg") center no-repeat no-repeat;
+
+    &Main {
+        background: url('./image/image\ 2\ .jpg') center no-repeat no-repeat;
         background-size: cover;
-        padding: 35px 50px
+        padding: 35px 50px;
         
     }
-    
-    &TitleMain{
-        display:flex;
+
+    &Planet{
+        background: url('./image/image\ Planet.jpg') center no-repeat no-repeat;
+        background-size: cover;
+        padding: 35px 50px;
+        z-index: 0;
+    }
+
+    &TitleMain {
+        display: flex;
         flex-direction: column;
         height: 100%;
         align-items: center;
         justify-content: center;
-        div{
+
+        div {
             padding-top: 50px;
             padding-bottom: 50px;
             text-align: center;
@@ -27,7 +34,7 @@
         }
     }
 
-    header{
+    header {
         width: calc(100% - 100px);
         position: absolute;
         display: grid;
@@ -36,10 +43,10 @@
         align-items: center;
     }
 
-    
+
 }
 
-.buttonGroup{
+.buttonGroup {
     justify-content: center;
     display: flex;
     gap: 20px;

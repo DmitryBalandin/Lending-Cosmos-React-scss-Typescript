@@ -5,7 +5,8 @@
     color: white;
     font: 1.1429rem/1.4 'NeueMachina';
     font-weight: 700;
-    transform: rotate(90deg);           
+    transform: rotate(90deg); 
+    z-index: 9;          
    
 
     &Item{
