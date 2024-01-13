@@ -11,6 +11,7 @@ import { Navigation } from "@/componenets/Navigation";
 export default function Home() {
     return (
         <div>
+            <Navigation />
             <section className={cl(styles.section, styles.sectionMain)}>
 
                 <header>
@@ -20,8 +21,6 @@ export default function Home() {
                         Whitepeper
                     </Button>
                 </header>
-                <Navigation />
-
                 <div className={cl(styles.sectionTitleMain)}>
                     <div>
                         <Title size="Medium">
@@ -43,6 +42,11 @@ export default function Home() {
                 </div>
             </section>
             <section className={cl(styles.section, styles.sectionPlanet)}>
+                <Title  size="Large">
+                    FACTIONS
+                </Title>
+            </section>
+            <section className={cl(styles.section, styles.sectionRoadmap)}>
 
             </section>
         </div>
