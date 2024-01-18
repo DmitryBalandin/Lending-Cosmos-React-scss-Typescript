@@ -5,13 +5,11 @@ import cl from "classnames";
 import { SocialNetworks } from "@/componenets/SocialNetworks";
 import { Button } from "@/componenets/Button";
 import { Title } from "@/componenets/Titile";
-import { Navigation } from "@/componenets/Navigation";
+
 
 
 export default function Home() {
-    return (
-        <div>
-            <Navigation />
+    return (     
             <section className={cl(styles.section, styles.sectionMain)}>
 
                 <header>
@@ -41,14 +39,5 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section className={cl(styles.section, styles.sectionPlanet)}>
-                <Title  size="Large">
-                    FACTIONS
-                </Title>
-            </section>
-            <section className={cl(styles.section, styles.sectionRoadmap)}>
-
-            </section>
-        </div>
     )
 } 

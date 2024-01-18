@@ -1,0 +1,59 @@
+.section {
+    height: max(100vh - 70px, 600px);
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &Planet {
+        background: url('./image/image\ Planet.jpg') center no-repeat no-repeat;
+        background-size: cover;
+        padding: 35px 50px;
+
+    }
+
+}
+
+.navigater {
+    display: flex;
+    gap: 30px;
+    &:nth-child(n){
+        flex-shrink: 0;
+    }
+    
+    &OpenTitle{
+        position: relative;
+    }
+
+    &Btn{
+        display: inline-block;
+        position: absolute;
+        top:27px;
+        left: 0;
+        transform: translateX(-50%);
+       
+    }
+
+    &Item{
+        display: flex;
+        flex-direction: column;
+        align-content: flex-end;
+        align-items: flex-end;
+        gap: 74px;
+        img{
+            margin-top: -60px;
+            margin-bottom: -45px;
+        }
+
+        &:first-child{
+            margin-top: 5px;
+        }
+        
+        &:nth-child(n){
+            flex-shrink: 0;
+        }
+    }
+}
+
+
