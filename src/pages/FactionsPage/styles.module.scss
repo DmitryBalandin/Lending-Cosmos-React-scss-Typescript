@@ -5,12 +5,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
+
+    &Title{
+        width: 100%;
+        text-align: center;
+        padding-left: 15px;
+    }
 
     &Planet {
         background: url('./image/image\ Planet.jpg') center no-repeat no-repeat;
         background-size: cover;
         padding: 35px 50px;
 
+        
     }
 
 }
@@ -18,42 +26,43 @@
 .navigater {
     display: flex;
     gap: 30px;
-    &:nth-child(n){
+
+    &:nth-child(n) {
         flex-shrink: 0;
+
     }
-    
-    &OpenTitle{
+
+    &OpenTitle {
         position: relative;
     }
 
-    &Btn{
+    &Btn {
         display: inline-block;
         position: absolute;
-        top:27px;
+        top: -19px;
         left: 0;
         transform: translateX(-50%);
-       
+
     }
 
-    &Item{
+    &Item {
         display: flex;
         flex-direction: column;
         align-content: flex-end;
         align-items: flex-end;
         gap: 74px;
-        img{
+
+        img {
             margin-top: -60px;
             margin-bottom: -45px;
         }
 
-        &:first-child{
+        &:first-child {
             margin-top: 5px;
         }
-        
-        &:nth-child(n){
+
+        &:nth-child(n) {
             flex-shrink: 0;
         }
     }
 }
-
-

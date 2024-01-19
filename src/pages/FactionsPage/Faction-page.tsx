@@ -11,11 +11,13 @@ interface FactionPage { };
 export const FactionPage: React.FC<FactionPage> = ({ }) => {
     return (
         <section className={cl(styles.section, styles.sectionPlanet)} >
-            <Title size="Large">
-                FACTIONS
-            </Title>
+            <div className={cl(styles.sectionTitle)}>
+                <Title size="Large">
+                    FACTIONS
+                </Title>
+            </div>
             <div className={cl(styles.navigater)}>
-                
+
                 <div className={cl(styles.navigaterItem)}>
                     <SubTitle size="Medium" upperCase={true}>blighted Badlands</SubTitle>
                     <div className={styles.navigaterOpenTitle}>
