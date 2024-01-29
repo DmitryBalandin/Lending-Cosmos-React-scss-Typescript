@@ -3,13 +3,17 @@
     font-family: 'TTOctosquares';
     font-weight: 500;
     line-height: 140%;
-
+    cursor: pointer;
     
     &Medium {
         font-size: 22px;
         
     }
+    
 
+    @media screen {
+        
+    }
     &Large {
         font-size: 80px;
         letter-spacing: 2.0857rem;

@@ -17,7 +17,6 @@ export const FactionPage: React.FC<FactionPage> = ({ }) => {
                 </Title>
             </div>
             <div className={cl(styles.navigater)}>
-
                 <div className={cl(styles.navigaterItem)}>
                     <SubTitle size="Medium" upperCase={true}>blighted Badlands</SubTitle>
                     <div className={styles.navigaterOpenTitle}>
