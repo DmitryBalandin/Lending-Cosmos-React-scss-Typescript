@@ -1,0 +1,69 @@
+$borderButton: 1px;
+
+.button {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 40px 15px 40px;
+    background: inherit;
+    opacity: 1;
+    z-index: 20;
+    
+    
+
+    color: white;
+    box-sizing: border-box;
+    box-shadow: none;
+    cursor: pointer;
+    text-align: center;
+   
+    
+
+    &OutsideBorder {
+        top: 0px;
+        left: 0px;
+        display: inline-block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: white;
+       z-index: 101;
+   
+        clip-path: polygon(70.00% 10.00%, 80% 0%, 100.00% 0.00%, 100.00% 100%, 30.00% 100.00%, 20.00% 90.00%, 0.00% 90.00%, 0.00% 10.00%);
+    }
+
+
+
+    &InsideBorder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        clip-path: polygon(calc(70.00% + $borderButton) calc(10.00% + $borderButton), 80% calc(0.00% + $borderButton),
+                calc(100.00% - $borderButton) calc(0.00% + $borderButton),
+                calc(100.00% - $borderButton) calc(100.00% - $borderButton),
+                calc(30.00%) calc(100.00% - $borderButton),
+                calc(20.00%) calc(90.00% - $borderButton),
+                calc(0.00% + $borderButton) calc(90.00% - $borderButton),
+                calc(0.00% + $borderButton) calc(10.00% + $borderButton));
+        line-height: 140%;
+        background:black;
+        transition: all 1s, color 1s;
+        
+      
+        z-index: 200;
+
+        &:hover {
+            background: white;
+            color: black;
+        }
+
+
+    }
+
+
+}

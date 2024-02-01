@@ -5,39 +5,41 @@ import cl from "classnames";
 import { SocialNetworks } from "@/componenets/SocialNetworks";
 import { Button } from "@/componenets/Button";
 import { Title } from "@/componenets/Titile";
+import { SvgButton } from './../../componenets/SvgButton/index';
 
 
 
 export default function Home() {
-    return (     
-            <section className={cl(styles.section, styles.sectionMain)}>
+    return (
+        <section className={cl(styles.section, styles.sectionMain)}>
+            <header>
 
-                <header>
-                    <Logo />
-                    <SocialNetworks />
-                    <Button onClick={() => { }}>
-                        Whitepeper
-                    </Button>
-                </header>
-                <div className={cl(styles.sectionTitleMain)}>
-                    <div>
-                        <Title size="Medium">
-                            From dusk to&nbsp;dawn
-                        </Title>
-                        <ul className={styles.buttonGroup}>
-                            <li>
-                                <Button onClick={() => { }}>
-                                    Mint
-                                </Button>
-                            </li>
-                            <li>
-                                <Button onClick={() => { }}>
-                                    Connect Wallet
-                                </Button>
-                            </li>
-                        </ul>
-                    </div>
+                <Logo />
+                <SocialNetworks />
+                <SvgButton onClick={() => { }}>
+                    Whitepeper
+                </SvgButton>
+            </header>
+            <div className={cl(styles.sectionTitleMain)}>
+                <div>
+                    <Title size="Medium">
+                        From dusk to&nbsp;dawn
+                    </Title>
+                    <ul className={styles.buttonGroup}>
+                        <li>
+                            <SvgButton onClick={() => { }}>
+                                Mint
+                            </SvgButton>
+                        </li>
+                        <li>
+                            <SvgButton onClick={() => { }}>
+                                Connect Wallet
+                            </SvgButton>
+                        </li>
+                    </ul>
                 </div>
-            </section>
+            </div>
+
+        </section>
     )
 } 

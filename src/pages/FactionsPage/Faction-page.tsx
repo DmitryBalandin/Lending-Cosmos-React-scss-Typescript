@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 import { SvgNavigation } from './../../componenets/svgNavigaion/index';
 import { SubTitle } from "@/componenets/subTitles";
 import { Button } from "@/componenets/Button";
-
+import { SvgButton } from "@/componenets/SvgButton";
 
 interface FactionPage { };
 
@@ -24,7 +24,7 @@ export const FactionPage: React.FC<FactionPage> = ({ }) => {
                             className={styles.navigaterImg}
                         />
                         <div className={styles.navigaterBtn}>
-                            <Button onClick={() => { }}>More</Button>
+                            <SvgButton onClick={() => { }}>More</SvgButton>
                         </div>
                     </div>
                     <SubTitle size="Medium">Glacial Frontier</SubTitle>
