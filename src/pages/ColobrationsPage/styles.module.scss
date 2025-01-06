@@ -1,0 +1,50 @@
+.section {
+    height: max(100vh - 70px, 600px);
+    position: relative;
+    z-index: 0;
+    background: rgb(91,75,85);
+    background: linear-gradient(0deg, rgba(91,75,85,1) 0%, rgba(62,53,87,1) 100%);
+    
+    &Colobrations{
+        background-size: cover;
+        padding: 35px 50px;
+        overflow: hidden;
+    }
+ 
+    &::before {
+        content: "";
+        top:0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        position: absolute;
+        height: max(100vh - 70px, 600px);
+        width: 100% ;
+        background: linear-gradient(200deg, #0A1418 -20.47%, #352F46 112.47%);
+        filter: blur(64px);
+        z-index: -1;
+    }
+}
+
+.arrLogo{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.container{
+    padding: 0 150px;
+    text-align: center;
+}
+.titleSection{
+    display: flex;
+    justify-content: center;
+    margin-bottom:35px;
+}
+.title{
+    // display: flex;
+    // justify-content: center;
+    // flex-shrink: 1;
+    margin-bottom: 60px;
+}

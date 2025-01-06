@@ -1,0 +1,24 @@
+.container{
+    position: relative;
+    transform: rotate(90deg);
+    width: 415px;
+    &Svg{
+        top: -15px;
+        left: 0px;
+        position: absolute;
+        pointer-events: none;
+        width: 404px;
+    }
+    &Slider{
+        transform: rotate(90deg);
+        
+    }
+}
+
+.inputRange{
+    width: 415px;
+    cursor: pointer;
+    height: 1.5px;
+
+   
+}

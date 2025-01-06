@@ -1,0 +1,59 @@
+.navigation {
+    position: fixed;
+    top: 50%;
+    left: -150px;
+    color: white;
+    font: 1.1429rem/1.4 'NeueMachina';
+    font-weight: 700;
+    width: 430px;
+    transform: rotate(90deg); 
+    z-index: 9;
+
+
+    &Item {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+
+    }
+
+    &Star {
+        width: 21.52px;
+        height: 21.52px;
+    object-fit: cover;
+    }
+
+    &Value {
+        
+        
+        opacity: 0.5;
+        transition: opacity 0.3s;
+
+        &:hover,
+        &:visited {
+            color: white;
+            opacity: 1.0;
+        }
+
+        &Active {
+            opacity: 1.0;
+        }
+
+        
+    }
+
+    &Link {
+        text-decoration: none;
+        color: white;
+        opacity: 0.7;
+        &:hover,
+        &:visited {
+            
+            color: white;
+
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+}

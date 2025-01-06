@@ -1,0 +1,85 @@
+.section {
+    position: relative;
+    height: max(150vh, 600px);
+    overflow: hidden;
+    padding: 70px 180px 0px;
+    background: rgb(18, 23, 34);
+    background: linear-gradient(0deg, rgba(18, 23, 34, 1) 0%, rgba(62, 35, 68, 1) 100%);
+    user-select: none;
+    
+    &EllipseOne {
+        position: absolute;
+        width: 636px;
+        height: 492.81px;
+        left: 555px;
+        top: 630px;
+        transform: rotate(-170.88deg);
+        filter: blur(457.29px);
+        background: rgb(241, 163, 71);
+        opacity: 0.7;
+
+    }
+
+    &EllipseTwo {
+        position: absolute;
+        width: 636px;
+        height: 492.81px;
+        left: 180px;
+        top: 280px;
+        transform: rotate(-170.88deg);
+        filter: blur(457.29px);
+        background: rgba(255, 114, 190, 0.7);
+        opacity: 0.7;
+
+    }
+
+    &EllipseThree {
+        position: absolute;
+        width: 847.37px;
+        height: 656.75px;
+        left: 490px;
+        top: 710.34px;
+        transform: rotate(-170.88deg);
+        filter: blur(381.75px);
+        background: rgba(199, 70, 210, 0.5);
+        opacity: 0.7;
+
+    }
+
+    &TitlePage{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 35px;
+    }
+
+    &MainTitle{
+        text-align: center;
+        margin-bottom:105px ;
+    }
+}
+
+.footer {
+    display: flex;
+    position: absolute;
+    width: calc(100% - 140px);
+    height: 174px;
+    left: 0;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    z-index: 1;
+    align-items: center;
+    padding: 0 70px 0 70px;
+    justify-content: space-between;
+    gap:120px;
+
+    &Date {
+        color: rgb(255, 255, 255);
+        font-family: Mazzard;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 140%;
+        letter-spacing: 0%;
+        text-align: right;
+        flex-basis: 1200px;
+    }
+}

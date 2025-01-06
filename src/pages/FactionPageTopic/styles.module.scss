@@ -1,0 +1,79 @@
+.section {
+    position: relative;
+    height: max(100vh - 70px, 800px);
+    overflow: hidden;
+    &Img{
+        margin-bottom: 40px;
+    }
+
+
+    &FactionPageTopic {
+        padding: 35px 50px 35px 130px;
+        position: cover;
+
+        &0 {
+            background: url('./image/background1.jpeg') center no-repeat no-repeat;
+        }
+
+        &1 {
+            background: url('./image/background2.jpeg') center no-repeat no-repeat;
+        }
+
+        &2 {
+            background: url('./image/background3.jpeg') center no-repeat no-repeat;
+        }
+
+        &3 {
+            background: url('./image/background4.jpeg') center no-repeat no-repeat;
+        }
+    }
+
+    &Describe {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        min-width: 400px;
+        max-width: 848px;
+        margin-bottom: 100px;
+    }
+
+    &Text {
+        color: rgb(255, 255, 255);
+        font-family: Move-X;
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 140%;
+        letter-spacing: 0%;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    &NavButtons{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 105px;
+    }
+}
+
+.button {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+
+    &Svg {
+
+        stroke: white;
+
+        &Active {
+            stroke: black;
+        }
+    }
+
+}
+
+.inputRange{
+    position: absolute;
+    right: -150px;
+    z-index: 2;
+    bottom: 360px;
+}

@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    gap: 30px;
+    justify-content: space-evenly;
+    padding-right: 50px;
+    &InsideFlex {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        &:nth-child(even){
+            padding-top: 72px;
+        }
+    }
+}
+
+.item {
+    position: relative;
+    width: 270.81px;
+    height: 260.78px;
+    box-sizing: border-box;
+    backdrop-filter: blur(46px);
+    background: rgba(255, 255, 255, 0.2);
+    border: 5px outset rgba(192, 186, 181, 0.2);
+
+    &Image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-position: center;
+    }
+}

@@ -1,0 +1,125 @@
+.buttonCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100%;
+    
+    &Container {
+        display: inline-block;
+        position: relative;
+        width: 462px;
+        min-height: 100px;
+        clip-path: polygon(0px 0px, 53px 0px, 83px 13px, 100% 13px, 100% calc(100% - 13px), calc(100% - 53px) calc(100% - 14px), calc(100% - 82px) 100%, 0px 100%);
+        backdrop-filter: blur(33.85px);
+        background-color: black;
+        background: linear-gradient(205.05deg, rgba(255, 255, 255, 0) -20.714%, rgba(255, 255, 255, 0.15) 106.262%);
+        box-shadow: inset 3px -3px 3px -1px rgba(235, 226, 226, 0.14);
+        line-height: 140%;
+        letter-spacing: 0%;
+        text-align: left;
+        transition: 1s;
+
+        &:before {
+            position: absolute;
+            content: url(./image/Vector.svg);
+            left: 5px;
+            bottom: 5px;
+            z-index: 1;
+            width: 18px;
+            height: 18px;
+            
+        }
+        &::after {
+            position: absolute;
+            content: url(./image/Vector.svg);
+            right:5px;
+            top: 13px;
+            z-index: 1;
+            transform: rotate(180deg);
+        }
+
+
+
+        &Active {
+            @extend .buttonCardsContainer;
+            width: 503px;
+            backdrop-filter: blur(34px);
+            background: rgb(255, 255, 255);
+            opacity: 0.85;
+            transition: 1s;
+
+            &:before {
+                position: absolute;
+                content: url(./image/VectorIsActive.svg);
+                left: 5px;
+                bottom: 5px;
+                z-index: 1;
+                width: 18px;
+                height: 18px;
+                
+            }
+            &::after {
+                position: absolute;
+                content: url(./image/VectorIsActive.svg);
+                right:5px;
+                top: 13px;
+                z-index: 1;
+                transform: rotate(180deg);
+                
+            }
+        }
+    }
+
+    &Item {
+        padding: 40px 30px 38px 26px;
+        cursor: pointer;
+        &Active {
+            @extend .buttonCardsItem;
+        }
+    }
+
+
+    &Number {
+        color: rgb(255, 255, 255);
+        font-family: Neue Machina;
+        font-size: 41px;
+        font-weight: 700;
+        margin-bottom: 20px;
+
+        &Active {
+            @extend .buttonCardsNumber;
+            font-size: 45px;
+            color: rgb(0, 0, 0);
+        }
+    }
+
+    &Name {
+        color: rgb(255, 255, 255);
+        font-family: Mazzard;
+        font-size: 13px;
+        font-weight: 700;
+        padding-left: 8px;
+        text-transform: uppercase;
+
+        &Active {
+            @extend .buttonCardsName;
+            font-size: 15px;
+            color: rgb(0, 0, 0);
+        }
+    }
+
+    &Text {
+        color: rgb(255, 255, 255);
+        font-family: Mazzard;
+        font-size: 13px;
+        font-weight: 400;
+        padding-left: 8px;
+
+        &Active {
+            @extend .buttonCardsText;
+            font-size: 15px;
+            color: rgb(0, 0, 0);
+        }
+    }
+}

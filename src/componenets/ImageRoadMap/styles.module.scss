@@ -1,0 +1,42 @@
+.container {
+    height: max(200vh + 100px);
+    width: max(200%);
+    overflow: hidden;
+    padding-left: 250px;
+    position: absolute;
+    left: 0px;
+    top:0px;
+    z-index: -1;
+    img{
+        padding-top: 100px;
+        width: 2000px;
+        height: 1700px;
+        object-fit: contain;
+    }
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 872.59px;
+        height: 576.51px;
+        left: -100.17px;
+        top: 941.44px;
+        transform: rotate(-24.29deg);
+        filter: blur(867.59px);
+        background: rgb(255, 114, 224);
+        opacity: 0.9;
+    }
+    
+}
+
+
+.ellipse {
+    position: absolute;
+
+    width: 191.24px;
+    height: 126.35px;
+    transform: rotate(155.71deg);
+    filter: blur(134.64px);
+    background: rgb(255, 114, 224);
+}

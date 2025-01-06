@@ -1,0 +1,27 @@
+.title {
+    color: #FFF;
+    font-family: 'TTOctosquares';
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+   
+    
+    &Medium {
+        font-size: 66px;
+        letter-spacing: 1.4207rem;
+        @media (max-width: 1200px ){
+            font-size: max(40px, 5vw);
+           
+        }
+    }
+
+    &Large {
+        font-size: 80px;
+        letter-spacing: 2.0857rem;
+
+        @media (max-width: 1200px ){
+            font-size: max(40px, 5vw);
+            
+        }
+    }
+}

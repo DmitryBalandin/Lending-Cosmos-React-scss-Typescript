@@ -1,0 +1,51 @@
+$left-indent: 35px;
+$right-indent: 50px;
+$height-indent: 7px;
+
+
+.container {
+    display: flex;
+    position: relative;
+    width: 241px;
+    height: 113px;
+    clip-path: polygon(0px 0px, $left-indent 0px, $right-indent $height-indent, 100% $height-indent, 100% calc(100% - $height-indent), calc(100% - $left-indent) calc(100% - $height-indent), calc(100% - $right-indent) 100%, 0px 100%);
+    backdrop-filter: blur(33.85px);
+    background-color: black;
+    background: linear-gradient(205.05deg, rgba(255, 255, 255, 0) -20.714%, rgba(255, 255, 255, 0.15) 106.262%);
+    box-shadow: inset 3px -3px 3px -1px rgba(235, 226, 226, 0.14);
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    &:before {
+        position: absolute;
+        content: url(./image/Vector.svg);
+        left: 4px;
+        bottom: 5px;
+        z-index: 1;
+        width: 14px;
+        height: 14px;
+        
+    }
+    &::after {
+        position: absolute;
+        content: url(./image/Vector.svg);
+        right:4px;
+        top: 9px;
+        z-index: 1;
+        transform: rotate(180deg);
+        
+    }
+
+}
+
+.item {
+    color: rgb(255, 255, 255);
+    font-family: TTOctosquares-Regular;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase; 
+}
+

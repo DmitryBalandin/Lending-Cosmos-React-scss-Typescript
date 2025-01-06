@@ -1,0 +1,88 @@
+.section {
+    position: relative;
+    height: max(150vh, 600px);
+    overflow: hidden;
+    background: linear-gradient(0deg, rgb(29, 26, 28) 0%, rgb(15, 9, 32) 100%);
+    opacity: 0.99;
+    padding:70px 50px 70px 150px;
+
+    &MainTitle{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 90px;
+
+        div{
+            text-align: center;
+        }
+    }
+
+    &TitlePage{
+        margin-left: 25px;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 35px;
+
+        
+    }
+
+    &::before {
+        content: "";
+        width: calc(100% + 45px);
+        ;
+        height: calc(100% + 45px);
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        position: absolute;
+        filter: blur(10px);
+        background: url('./image/image\ 2.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+}
+
+$left-indent: 50px;
+$right-indent: 75px;
+$height-indent: 11px;
+
+
+.container {
+    position: relative;
+    width: 1221px;
+    height: 776.75px;
+    clip-path: polygon(0px 0px, $left-indent 0px, $right-indent $height-indent, 100% $height-indent, 100% calc(100% - $height-indent), calc(100% - $left-indent) calc(100% - $height-indent), calc(100% - $right-indent) 100%, 0px 100%);
+    backdrop-filter: blur(33.85px);
+    background-color: black;
+    background: linear-gradient(205.05deg, rgba(255, 255, 255, 0) -20.714%, rgba(255, 255, 255, 0.15) 106.262%);
+    box-shadow: inset 3px -3px 3px -1px rgba(235, 226, 226, 0.14);
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: auto;
+
+
+    &:before {
+        position: absolute;
+        content: url(./image/Vector.svg);
+        left: 5px;
+        bottom: 8px;
+        z-index: 1;
+        width: 14px;
+        height: 14px;
+
+    }
+
+    &::after {
+        position: absolute;
+        content: url(./image/Vector.svg);
+        right: 5px;
+        top: 12px;
+        z-index: 1;
+        transform: rotate(180deg);
+
+    }
+
+}
+
