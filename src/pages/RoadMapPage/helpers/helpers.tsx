@@ -13,6 +13,7 @@ interface Event extends React.MouseEvent<HTMLUListElement>{
 export const handleClick = (styles: Array<any>, state: State, setState: React.Dispatch<React.SetStateAction<State>>) => {
     const handleClick = (e: Event) => {
         let target: any;
+        console.log("sa")
         
         styles.forEach((style) => {
             target = e.target.closest(`.${style}`)
