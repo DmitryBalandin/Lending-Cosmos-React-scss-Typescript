@@ -1,11 +1,9 @@
 import React from "react";
 import styles from './styles.module.scss';
 import cl from "classnames";
-import img from './image/badlance/one Act.png';
 import { listBuldingsArr, ListBildingsArr } from "./date/date";
+import { NameSize } from "@/globalType";
 
-type NameSize = string;
-// "small" | "medium" | "large" | "Xlarge" ;
 
 interface ListBuildungsProps {
     size: NameSize;
@@ -15,8 +13,8 @@ export const ListBuildungs: React.FC<ListBuildungsProps> = ({ size }) => {
 
     const amountRow = ["Small", "Medium", "Large", "Xlarge"].indexOf(size) + 1;
 
-    const changesArrForFlex = (arr: Array<ListBildingsArr>, size: number): any => {
-        let changeArrBuldings = [];
+    const changesArrForFlex = (arr:Array<ListBildingsArr>, size: number): Array<Array<ListBildingsArr>> => {
+        let changeArrBuldings:Array<Array<undefined | ListBildingsArr>>= [];
         for (let i = 0; i < size; i++) {
             changeArrBuldings.push([]);
         }

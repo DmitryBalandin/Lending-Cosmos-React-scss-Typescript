@@ -12,14 +12,12 @@ interface Carausel {
 export const Carausel: React.FC<Carausel> = ({ arrCardCustomers }) => {
 
 
-    const [listActiveCard, setlistActiveCard] = useState(() => arrCardCustomers)
+    const [listActiveCard, setlistActiveCard] = useState<Array<CardCustomer>>(() => arrCardCustomers)
      
    
-    
+
 
     const selectActiveCard = helper(styles,listActiveCard,setlistActiveCard);
-
-  
 
     return (
         <div className={cl(styles.carauselContainer)}

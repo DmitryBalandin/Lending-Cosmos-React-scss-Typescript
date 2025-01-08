@@ -1,27 +1,18 @@
 
-import React from "react"
+import React, { ChangeEvent } from "react"
 import { CardCustomer } from "@/pages/Members/date/arrCardCustomer"
+import { IClassNames, EventMouse } from "@/globalType"
 
 
+export const helper = (styles: IClassNames, listActiveCard: Array<CardCustomer>, setlistActiveCard: React.Dispatch<React.SetStateAction<Array<CardCustomer>>>) => {
 
-
-
-interface Event extends React.MouseEvent{
-    target:any
-    }
-
-
-export const helper = (styles:any, listActiveCard:Array<CardCustomer>,setlistActiveCard:React.Dispatch<React.SetStateAction<Array<CardCustomer>>>) =>{
-   
-    const selectActiveCard = (event:Event) => {
+    const selectActiveCard = (event: EventMouse<HTMLDivElement, any>) => {
         const target = event.target;
-
-        
 
         if (target.closest((`.${styles.customerActiveDescription}`))) {
             return
         }
-
+        
         if (!target.closest((`.${styles.customerContainerActive}`)) && !target.closest(`.${styles.customerContainer}`)) {
             return
         }
@@ -71,4 +62,4 @@ export const helper = (styles:any, listActiveCard:Array<CardCustomer>,setlistAct
 }
 
 
- 
+

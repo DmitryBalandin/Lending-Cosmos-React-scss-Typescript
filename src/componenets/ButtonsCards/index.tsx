@@ -9,7 +9,7 @@ import React from "react";
 
 interface ButtonCardProps {
     buttonCards:Array<ButtonCard>;
-    handlerOnclick:any;
+    handlerOnclick:(e?:React.MouseEvent)=>void;
 }
 
 interface ButtonCard {

@@ -6,15 +6,15 @@ import { SubTitle } from "@/componenets/subTitles";
 import { SvgButton } from "@/componenets/SvgButton";
 import React, { useState } from "react";
 import { arrImage } from "./date/date";
-import { handleClick } from "./helpers/helpers";
+import { handleClick, State } from "./helpers/helpers";
 
 
 interface FactionPage { };
 
 export const FactionPage: React.FC<FactionPage> = ({ }) => {
 
-    const [statePage, setStatePage] = useState({ isActive: 0, sizeLine: [207, 61], heightLine: 527 })
-    const arrNameTopic = ['blighted Badlands', 'Glacial Frontier', 'Sundered Grove', 'Sky Citadel'];
+    const [statePage, setStatePage] = useState<State>({ isActive: 0, sizeLine: [207, 61], heightLine: 527 })
+    const arrNameTopic:Array<string> = ['blighted Badlands', 'Glacial Frontier', 'Sundered Grove', 'Sky Citadel'];
 
     
     const handleClickDiamond = handleClick(['.diamond'], statePage, setStatePage)
@@ -29,7 +29,7 @@ export const FactionPage: React.FC<FactionPage> = ({ }) => {
             </div>
             <div className={cl(styles.navigater)}>
                 <div className={cl(styles.navigaterItem)} onClick={handleClickNameTopic}>
-                    {arrNameTopic.map((nameTopic: string, index) => {
+                    {arrNameTopic.map((nameTopic, index) => {
                         if (index === statePage.isActive) {
                             return (<>
                                 <SubTitle dataId={index} key={nameTopic} size="Medium" upperCase={true}>{nameTopic}</SubTitle>

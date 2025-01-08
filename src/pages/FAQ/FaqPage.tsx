@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 import { TitleSectionPage } from "@/componenets/TitleSectionPage";
 import { Title } from "@/componenets/Titile";
 import { CardButtonGrid } from "@/componenets/CardButtonGrid";
-import { postDateGrid, PostDate } from "@/pages/FAQ/date/datePostGrid";
+import { postDateGrid} from "@/pages/FAQ/date/datePostGrid";
 
 
 interface FaqPage { };

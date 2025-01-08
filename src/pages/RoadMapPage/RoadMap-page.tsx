@@ -10,6 +10,8 @@ import { buttonCards } from "./date/dateButtonCards";
 import { TitleSectionPage } from "@/componenets/TitleSectionPage";
 import stylesButtonCards from '../../componenets/ButtonsCards/styles.module.scss';
 import { handleClick } from "./helpers/helpers";
+import { State } from "./helpers/helpers";
+
 
 interface RoadMapPage { };
 
@@ -18,7 +20,7 @@ interface RoadMapPage { };
 
 export const RoadMapPage: React.FC<RoadMapPage> = ({ }) => {
 
-    const [activeDiamond, setAcvtiveDiamond] = useState({ isActive: 0, arrayDateCard: buttonCards, numberImage: 0 })
+    const [activeDiamond, setAcvtiveDiamond] = useState<State>({ isActive: 0, arrayDateCard: buttonCards, numberImage: 0 })
 
     
     const handlerClickDiamond = handleClick(['diamond'],activeDiamond,setAcvtiveDiamond);

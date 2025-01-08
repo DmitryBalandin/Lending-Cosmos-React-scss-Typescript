@@ -7,20 +7,20 @@ interface RangeSvg {
     
 }
 
-
 export const RangeSvg: React.FC<RangeSvg> = ({}) => {
 
 
-    const [styleContainerSvg, setStyleContinerSvg] = useState({ marginLeft: '-11px' })
-    const [inputValue, setInputValue] = useState(0);
-    const handleInput = (e: any) => {
+    const [styleContainerSvg, setStyleContinerSvg] = useState<{marginLeft:string}>({ marginLeft: '-11px' })
+    const [inputValue, setInputValue] = useState<number>(0);
+    const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(+e.target.value)
+        
         setStyleContinerSvg({
             marginLeft: `${-11 + +e.target.value * 4}px`
 
         })
     }
-
+      
 
     return (<div className={cl(styles.container)}>
         <input onInput={handleInput} type="range" min={0} max={100}

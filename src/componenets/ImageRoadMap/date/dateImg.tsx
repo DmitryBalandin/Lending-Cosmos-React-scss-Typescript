@@ -5,7 +5,7 @@ import img4 from '../image/Image4.png';
 import img5 from '../image/Image5.png';
 
 
-const arrImageBackground = [img1,img2,img3,img4,img5];
+const arrImageBackground:Array<string> = [img1,img2,img3,img4,img5];
 
 
 export {arrImageBackground};

@@ -33,12 +33,12 @@ export const App = () => {
 
             </Routes> */}
             <Navigation links={links}/>
-            {/* <Home  /> 
+            <Home  /> 
              <FactionPage />
             <RoadMapPage />
             <ColobrationsPage/>
             <FaqPage/>
-            <MembersPage/> */}
+            <MembersPage/>
             <FactionPageTopic/>
             
 

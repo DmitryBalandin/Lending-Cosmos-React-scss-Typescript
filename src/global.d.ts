@@ -14,3 +14,5 @@ declare module '*module.scss' {
     const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
     export default content;
   }
+
+  

@@ -5,27 +5,28 @@ import { SvgButton } from "@/componenets/SvgButton";
 import { RangeSvg } from "@/componenets/RangeSvg";
 import { ListBuildungs } from "@/componenets/ListBuildungs";
 
-import { handlerMouse,constuctorResizeHandler, throttle } from "./helpers/helpers";
+import { handlerMouse, constuctorResizeHandler, throttle } from "./helpers/helpers";
+import { arrBackground, describePage, arrSize, arrImage } from "./date/date";
+import { NameSize } from "@/globalType";
 
-import { arrBackground,describePage,arrSize, arrImage } from "./date/date";
-import img from './image/BADLANDS TITLE 1.png';
 
 
 interface FactionPageTopic { };
 
 export const FactionPageTopic: React.FC<FactionPageTopic> = ({ }) => {
 
-    const [calcSizeScreen, setcalcSizeScreen] = useState(() => {
-        return arrSize.find(item => item.size >= window.innerWidth).name;
-    })
+    const [calcSizeScreen, setcalcSizeScreen] = useState<NameSize>(
+        () => {
+            return arrSize.find(item => item.size >= window.innerWidth).name;
+        })
 
 
-    const [isActiveButton, setIsActiveButton] = useState(false);
+    const [isActiveButton, setIsActiveButton] = useState<boolean>(false);
 
     const handleMouseEnter = handlerMouse(setIsActiveButton, true);
-    const handleMouseLeave = handlerMouse(setIsActiveButton,false);
+    const handleMouseLeave = handlerMouse(setIsActiveButton, false);
 
-    let resizeHandler = constuctorResizeHandler(arrSize,setcalcSizeScreen);
+    let resizeHandler = constuctorResizeHandler(arrSize, setcalcSizeScreen);
     resizeHandler = throttle(resizeHandler, 200);
 
     useEffect(() => {

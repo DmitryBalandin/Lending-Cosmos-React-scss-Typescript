@@ -1,3 +1,6 @@
+import React from "react";
+import { EventMouse } from "@/globalType";
+
 
 interface State {
     isActive: number;
@@ -7,8 +10,8 @@ interface State {
 
 
 const handleClick = (styles: Array<string>, state: State, setState: React.Dispatch<React.SetStateAction<State>>) => {
-    const handleClick = (e: any) => {
-        let target: any;
+    const handleClick = (e: EventMouse<HTMLDivElement,any>) => {
+        let target:any;
 
         styles.forEach((style) => {
             target = e.target.closest(`${style}`)
@@ -30,4 +33,4 @@ const handleClick = (styles: Array<string>, state: State, setState: React.Dispat
     return handleClick
 }
 
-export { handleClick };
+export { handleClick, State };

@@ -15,7 +15,7 @@ interface NavigationProps {
 
 export const Navigation: React.FC<NavigationProps> = ({links}) => {
 
-    const [navigationVisible, setNavigatorVisiable] = useState(links.slice(0, 3));
+    const [navigationVisible, setNavigatorVisiable] = useState<Array<Links>>(links.slice(0, 3));
     
     const arrEntriesSection = window.document.getElementsByTagName("SECTION");
     const callback = funcMadeCallback(links, setNavigatorVisiable);

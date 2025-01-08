@@ -16,9 +16,7 @@ export const SvgButton: React.FC<SvgButtonProps> = ({ onClick, children, ...prop
             
             <button onClick={(onClick)} {...props} className={styles.button}>
                 {children}
-                
 
-                
                 <span className={styles.buttonInsideBorder}>{children}</span>
                 <span className={styles.buttonOutsideBorder}></span>
             </button>
