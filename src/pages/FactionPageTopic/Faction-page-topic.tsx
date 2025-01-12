@@ -23,6 +23,8 @@ export const FactionPageTopic: React.FC<FactionPageTopic> = ({ }) => {
 
     const [isActiveButton, setIsActiveButton] = useState<boolean>(false);
 
+    const [positionCarusel, setPositionCarusel] = useState<number>(0)
+
     const handleMouseEnter = handlerMouse(setIsActiveButton, true);
     const handleMouseLeave = handlerMouse(setIsActiveButton, false);
 
@@ -69,9 +71,9 @@ export const FactionPageTopic: React.FC<FactionPageTopic> = ({ }) => {
                 })}
             </div>
             <div className={cl(styles.inputRange)}>
-                <RangeSvg></RangeSvg>
+                <RangeSvg setPositionCarusel={setPositionCarusel}></RangeSvg>
             </div>
-            <ListBuildungs size={calcSizeScreen}></ListBuildungs>
+            <ListBuildungs size={calcSizeScreen} positionCarusel={positionCarusel}></ListBuildungs>
         </section>
     )
 }

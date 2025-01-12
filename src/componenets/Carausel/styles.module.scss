@@ -1,5 +1,7 @@
 .carausel {
+    position: absolute;
     &Container {
+        position: relative;
         display: flex;
         gap: 20px;
     }

@@ -2,8 +2,8 @@ import React, { useRef, useState } from "react";
 import cl from "classnames";
 import styles from './styles.module.scss';
 import { CardCustomer } from "@/pages/Members/date/arrCardCustomer";
-import  {helper}  from "./helpers/selectActiveCard";
-
+import { helper } from "./helpers/selectActiveCard";
+import { EventMouse } from "@/globalType";
 interface Carausel {
     arrCardCustomers: Array<CardCustomer>
 }
@@ -12,36 +12,78 @@ interface Carausel {
 export const Carausel: React.FC<Carausel> = ({ arrCardCustomers }) => {
 
 
-    const [listActiveCard, setlistActiveCard] = useState<Array<CardCustomer>>(() => arrCardCustomers)
-     
-   
+    const [listActiveCard, setlistActiveCard] = useState<Array<CardCustomer>>(() => arrCardCustomers);
+    const [leftOffsetCarusel, setLeftOffsetCarusel] = useState<string>("0px");
+    const selectActiveCard = helper(styles, listActiveCard, setlistActiveCard);
 
 
-    const selectActiveCard = helper(styles,listActiveCard,setlistActiveCard);
+    const handleOnMouseDown = (event: EventMouse<HTMLDivElement, any>) => {
+        event.preventDefault();
+        const target = event.target.closest((`.${styles.carauselContainer}`));
+        const slider = event.target.closest('#slider')
+        let shiftX = event.clientX - target.getBoundingClientRect().left;
+        
+        console.log('ShtftX', shiftX)
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
 
-    return (
-        <div className={cl(styles.carauselContainer)}
-            onClick={selectActiveCard}
-        >{
-                listActiveCard.map((card) => {
-                    return (
 
-                        <div key={card.login} data-key={card.login} className={card.isActive ? cl(styles.customerContainerActive) : cl(styles.customerContainer)}>
-                            <div className={card.isActive ? cl(styles.customerItemActive) : cl(styles.customerItem)}>
-                                <img className={card.isActive ? cl(styles.customerAvatarActive) : cl(styles.customerAvatar)} src={card.avatar} alt="Avatar" />
-                                <div className={card.isActive ? cl(styles.customerCareerActive) : cl(styles.customerCareer)}>{card.career}</div>
-                                <div className={card.isActive ? cl(styles.customerLoginActive) : cl(styles.customerLogin)}>{card.login}</div>
-
-                            </div>
-                            {card.isActive ? <div className={cl(styles.customerActiveDescription)}>
-                                {card?.description}
-                            </div> : ""}
-                        </div>
-
-                    )
-                })
+        function onMouseMove(event: any) {
+            let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
+            console.log("NewLeft", newLeft, "Right",target.getBoundingClientRect().right, window.innerWidth,target.getBoundingClientRect().width);
+            
+            
+            if(newLeft > 0){
+                newLeft = 0;
             }
-        </div>
 
+            let rightEdge = slider.offsetWidth - target.offsetWidth;
+          
+
+            // if (newLeft > rightEdge) {
+            //     newLeft = rightEdge;
+            // }
+            // if (newLeft < -target.getBoundingClientRect().width + window.innerWidth - 100) {
+                
+            //     newLeft = -target.getBoundingClientRect().width + window.innerWidth - 100;
+            // }
+
+            setLeftOffsetCarusel(`${newLeft}px`)
+            
+        }
+        function onMouseUp() {
+            document.removeEventListener('mouseup', onMouseUp);
+            document.removeEventListener('mousemove', onMouseMove);
+        }
+
+        //    console.log(target.getBoundingClientRect(), event.clientX, shiftX, slider)
+
+    }
+    return (
+        <div className={cl(styles.carausel)} id="slider">
+            <div className={cl(styles.carauselContainer)}
+                onClick={selectActiveCard}
+                onMouseDown={handleOnMouseDown}
+                style={{ left: leftOffsetCarusel }}
+            >{
+                    listActiveCard.map((card) => {
+                        return (
+                            <div key={card.login} data-key={card.login} className={card.isActive ? cl(styles.customerContainerActive) : cl(styles.customerContainer)}>
+                                <div className={card.isActive ? cl(styles.customerItemActive) : cl(styles.customerItem)}>
+                                    <img className={card.isActive ? cl(styles.customerAvatarActive) : cl(styles.customerAvatar)} src={card.avatar} alt="Avatar" />
+                                    <div className={card.isActive ? cl(styles.customerCareerActive) : cl(styles.customerCareer)}>{card.career}</div>
+                                    <div className={card.isActive ? cl(styles.customerLoginActive) : cl(styles.customerLogin)}>{card.login}</div>
+
+                                </div>
+                                {card.isActive ? <div className={cl(styles.customerActiveDescription)}>
+                                    {card?.description}
+                                </div> : ""}
+                            </div>
+
+                        )
+                    })
+                }
+            </div>
+        </div>
     )
 }

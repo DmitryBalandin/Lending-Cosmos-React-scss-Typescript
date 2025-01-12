@@ -4,17 +4,17 @@ import cl from 'classnames';
 import slider from './image/Group 48095882.png';
 
 interface RangeSvg {
-    
+    setPositionCarusel:React.Dispatch<React.SetStateAction<number>>
 }
 
-export const RangeSvg: React.FC<RangeSvg> = ({}) => {
+export const RangeSvg: React.FC<RangeSvg> = ({setPositionCarusel}) => {
 
 
     const [styleContainerSvg, setStyleContinerSvg] = useState<{marginLeft:string}>({ marginLeft: '-11px' })
     const [inputValue, setInputValue] = useState<number>(0);
     const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(+e.target.value)
-        
+        setPositionCarusel(+e.target.value);
         setStyleContinerSvg({
             marginLeft: `${-11 + +e.target.value * 4}px`
 

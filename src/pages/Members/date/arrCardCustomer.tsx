@@ -41,6 +41,34 @@ const arrCardCustomer: Array<CardCustomer> = [
         login: "@ITSCUZZO",
         description: "@jaypegsonly was a corporate finance lawyer at a top global firm who has advised institutional clients, MNCs and VCs. He has worked on deals well over US$1B. Having delved into NFTs since July 2021, he brings his expertise and connections from Web2 into the Web3 world. With all these resources and experience, he aims to build a sustainable, scaleable ecosystem with Dusktopia",
         isActive: false,
+    },
+    {
+        avatar: avatar1,
+        career: "Co-founder / Ecosystem Chief",
+        login: "@jaypegsonl",
+        description: "@jaypegsonly was a corporate finance lawyer at a top global firm who has advised institutional clients, MNCs and VCs. He has worked on deals well over US$1B. Having delved into NFTs since July 2021, he brings his expertise and connections from Web2 into the Web3 world. With all these resources and experience, he aims to build a sustainable, scaleable ecosystem with Dusktopia",
+        isActive: false,
+    },
+    {
+        avatar: avatar2,
+        career: "Co-founder / Operations Chief",
+        login: "@0xSUPERPOTAT",
+        description: "@jaypegsonly was a corporate finance lawyer at a top global firm who has advised institutional clients, MNCs and VCs. He has worked on deals well over US$1B. Having delved into NFTs since July 2021, he brings his expertise and connections from Web2 into the Web3 world. With all these resources and experience, he aims to build a sustainable, scaleable ecosystem with Dusktopia",
+        isActive: false,
+    },
+    {
+        avatar: avatar3,
+        career: "Co-founder / Design Chief",
+        login: "@madking312",
+        description: "@jaypegsonly was a corporate finance lawyer at a top global firm who has advised institutional clients, MNCs and VCs. He has worked on deals well over US$1B. Having delved into NFTs since July 2021, he brings his expertise and connections from Web2 into the Web3 world. With all these resources and experience, he aims to build a sustainable, scaleable ecosystem with Dusktopia",
+        isActive: false,
+    },
+    {
+        avatar: avatar4,
+        career: "Blockchain Chief ",
+        login: "@ITSCUZZ",
+        description: "@jaypegsonly was a corporate finance lawyer at a top global firm who has advised institutional clients, MNCs and VCs. He has worked on deals well over US$1B. Having delved into NFTs since July 2021, he brings his expertise and connections from Web2 into the Web3 world. With all these resources and experience, he aims to build a sustainable, scaleable ecosystem with Dusktopia",
+        isActive: false,
     }
 ]
 

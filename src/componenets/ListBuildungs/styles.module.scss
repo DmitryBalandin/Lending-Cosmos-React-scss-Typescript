@@ -1,4 +1,11 @@
+.carausel{
+   
+    overflow-y: clip;
+
+}
+
 .container {
+
     display: flex;
     gap: 30px;
     justify-content: space-evenly;
