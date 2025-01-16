@@ -5,10 +5,12 @@ import { IClassNames, EventMouse } from "@/globalType"
 
 
 export const helper = (styles: IClassNames, listActiveCard: Array<CardCustomer>, setlistActiveCard: React.Dispatch<React.SetStateAction<Array<CardCustomer>>>) => {
-
-    const selectActiveCard = (event: EventMouse<HTMLDivElement, any>) => {
+   
+    const selectActiveCard = (event: EventMouse<HTMLDivElement,any>) => {
         const target = event.target;
 
+        
+        
         if (target.closest((`.${styles.customerActiveDescription}`))) {
             return
         }

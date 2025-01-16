@@ -8,7 +8,8 @@ import { ListBuildungs } from "@/componenets/ListBuildungs";
 import { handlerMouse, constuctorResizeHandler, throttle } from "./helpers/helpers";
 import { arrBackground, describePage, arrSize, arrImage } from "./date/date";
 import { NameSize } from "@/globalType";
-
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
 interface FactionPageTopic { };
@@ -37,16 +38,18 @@ export const FactionPageTopic: React.FC<FactionPageTopic> = ({ }) => {
         return () => { window.removeEventListener('resize', resizeHandler) };
     }, [])
 
+    const { id } = useParams()
+
     return (
         <section className={
             cl(styles.section,
                 styles.sectionFactionPageTopic,
-                `${styles.sectionFactionPageTopic}${arrBackground[0]}`)
+                `${styles.sectionFactionPageTopic}${arrBackground[+id]}`)
         } >
             <div className={cl(styles.sectionNavButtons)}>
                 <div>
-                    <SvgButton onClick={() => { }}>
-                        Close
+                    <SvgButton onClick={() => { }}>Close
+                        <Link to="/" ></Link>
                     </SvgButton>
                 </div>
                 <div onMouseOver={handleMouseEnter} onMouseOut={handleMouseLeave}>
@@ -61,12 +64,13 @@ export const FactionPageTopic: React.FC<FactionPageTopic> = ({ }) => {
                                 <path id="Vector 84" className={isActiveButton ? styles.buttonSvgActive : styles.buttonSvg} d="M0.75 5.75L24.25 5.75M19.25 10.75L24.25 5.75L19.25 0.75" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linecap="round" />
                             </svg>
                         </div>
+                        <Link to={`/${(+id + 1) % 4}`} ></Link>
                     </SvgButton>
                 </div>
             </div>
-            <img src={arrImage[0]} alt="Title Page" className={cl(styles.sectionImg)} />
+            <img src={arrImage[+id]} alt="Title Page" className={cl(styles.sectionImg)} />
             <div className={cl(styles.sectionDescribe)}>
-                {describePage[0].map((text: string) => {
+                {describePage[+id].map((text: string) => {
                     return (<p key={text.length} className={cl(styles.sectionText)}>{text}</p>)
                 })}
             </div>

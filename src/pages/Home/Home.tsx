@@ -6,6 +6,7 @@ import { SocialNetworks } from "@/componenets/SocialNetworks";
 import { Title } from "@/componenets/Titile";
 import { SvgButton } from './../../componenets/SvgButton/index';
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 
 export default function Home() {
@@ -38,7 +39,7 @@ export default function Home() {
                     </ul>
                 </div>
             </div>
-
+            
         </section>
     )
 } 

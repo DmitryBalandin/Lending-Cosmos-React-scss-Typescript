@@ -7,7 +7,7 @@ import { SvgButton } from "@/componenets/SvgButton";
 import React, { useState } from "react";
 import { arrImage } from "./date/date";
 import { handleClick, State } from "./helpers/helpers";
-
+import { Link } from "react-router-dom";
 
 interface FactionPage { };
 
@@ -38,7 +38,7 @@ export const FactionPage: React.FC<FactionPage> = ({ }) => {
                                         className={styles.navigaterImg}
                                     />
                                     <div className={styles.navigaterBtn}>
-                                        <SvgButton onClick={() => { }}>More</SvgButton>
+                                        <SvgButton onClick={() => { }}>More<Link to={`/${index}`} ></Link></SvgButton>
                                     </div>
                                 </div>
                             </>)

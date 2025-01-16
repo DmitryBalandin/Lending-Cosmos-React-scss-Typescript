@@ -4,7 +4,7 @@ import '@/styles/global.scss';
 import '../styles/reset.scss';
 
 import classes from "./App.module.scss";
-import { Link, Routes, Route } from "react-router-dom";
+import { Link, Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "@/pages/Home/Home";
 import { Navigation } from "./Navigation";
 import { RoadMapPage } from "@/pages/RoadMapPage/RoadMap-page";
@@ -22,25 +22,22 @@ export const App = () => {
     return (
 
         < >
-            
-            {/* <Routes>
-                <Route path="/" element={<Navigation />}>
-                    <Route path="" element={<Home/>}/>
-                    <Route path="Factiion" element={<FactionPage />} />
-                    <Route path="/Roadmap" element={<RoadMapPage />} />
 
-                </Route>
 
-            </Routes> */}
-            <Navigation links={links}/>
-            {/* <Home  /> 
-             <FactionPage />
-            <RoadMapPage />
-            <ColobrationsPage/>
-            <FaqPage/> */}
-            <MembersPage/>
-            <FactionPageTopic/>
-            
+            <BrowserRouter>
+
+                <Navigation links={links} />
+                <Home />
+                <Routes>
+                    <Route path="/" element={<FactionPage />} />
+                    <Route path="/:id" element={<FactionPageTopic />} />
+                </Routes>
+                <RoadMapPage />
+                <ColobrationsPage />
+                <FaqPage />
+                <MembersPage />
+            </BrowserRouter>
+
 
         </>
     );

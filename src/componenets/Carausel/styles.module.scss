@@ -1,5 +1,8 @@
 .carausel {
     position: absolute;
+     overflow: hidden;
+    
+    width:100%;
     &Container {
         position: relative;
         display: flex;
