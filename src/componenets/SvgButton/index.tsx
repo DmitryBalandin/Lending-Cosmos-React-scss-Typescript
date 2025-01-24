@@ -9,12 +9,13 @@ interface SvgButtonProps {
     onClick: () => void,
     props?:any,
     children: ReactNode,
+    
 }
 
-export const SvgButton: React.FC<SvgButtonProps> = ({ onClick, children, ...props }) => {
+export const SvgButton: React.FC<SvgButtonProps> = ({ onClick, children,  ...props }) => {
     return (
             
-            <button onClick={(onClick)} {...props} className={styles.button}>
+            <button onClick={(onClick)} {...props} className={cl(styles.button)}>
                 {children}
 
                 <span className={styles.buttonInsideBorder}>{children}</span>

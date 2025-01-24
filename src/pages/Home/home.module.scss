@@ -28,12 +28,12 @@
     }
 
     header {
-        width: calc(100% - 100px);
+        width: calc(100% - 100px) ;
         position: absolute;
         display: grid;
-        gap: 30px;
-        grid-template: 1fr/ 1fr auto auto;
-        align-items: center;
+        gap: 50px;
+        grid-template: 100%/ 1fr auto auto;
+        
     }
 
 

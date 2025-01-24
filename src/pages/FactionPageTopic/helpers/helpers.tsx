@@ -12,7 +12,7 @@ export const constuctorResizeHandler = (arrSize: Array<SizeScreen>, setcalcSizeS
 
 export const handlerMouse = (setIsActiveButton: React.Dispatch<React.SetStateAction<boolean>>, boolean: boolean) => {
     const handler = (event: EventMouse<HTMLDivElement, HTMLDivElement>) => {
-        if (!event.target.closest("BUTTON")) {
+        if (!event.target?.closest("BUTTON")) {
             return;
         }
         setIsActiveButton(boolean);

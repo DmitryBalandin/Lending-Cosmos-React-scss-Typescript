@@ -8,7 +8,8 @@ $borderButton: 1px;
     background: inherit;
     opacity: 1;
     z-index: 0;
-
+    
+    
 
 
     color: white;
@@ -70,7 +71,7 @@ $borderButton: 1px;
 
 }
 
-a {
+ .button a {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -81,10 +82,11 @@ a {
     &:visited {
 
         color: white;
-
+        
     }
 
     &:focus {
+        
         outline: none;
         color: black;
 

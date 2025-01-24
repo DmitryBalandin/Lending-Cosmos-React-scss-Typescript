@@ -54,25 +54,7 @@
         margin-bottom: 105px;
     }
 
-    // &Link{
-    //     position: absolute;
-    //     width: 100%;
-    //     height: 100%;
-    //     text-decoration: none;
-    //     color:inherit;
-        
-    //     &:hover,
-    //     &:visited {
-            
-    //         color: white;
-
-    //     }
-    //     &:focus{
-    //         outline: none;
-    //         color: black;
-            
-    //     }
-    // }
+    
 }
 
 .button {
@@ -96,4 +78,8 @@
     right: -150px;
     z-index: 2;
     bottom: 360px;
+}
+
+.hidden{
+    display: none;
 }

@@ -51,22 +51,22 @@ export const FactionPageTopic: React.FC<FactionPageTopic> = ({ }) => {
                     <SvgButton onClick={() => { }}>Close
                         <Link to="/" ></Link>
                     </SvgButton>
-                </div>
-                <div onMouseOver={handleMouseEnter} onMouseOut={handleMouseLeave}>
-                    <SvgButton onClick={() => { }}>
-                        <div className={cl(styles.button)} >
-                            <span>Next</span>
-                            <svg width="25.310669" height="11.506348" viewBox="0 0 25.3107 11.5063" fill="none" xmlns="http://www.w3.org/2000/svg" >
-                                <desc>
-                                    Created with Pixso.
-                                </desc>
-                                <defs />
-                                <path id="Vector 84" className={isActiveButton ? styles.buttonSvgActive : styles.buttonSvg} d="M0.75 5.75L24.25 5.75M19.25 10.75L24.25 5.75L19.25 0.75" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linecap="round" />
-                            </svg>
-                        </div>
-                        <Link to={`/${(+id + 1) % 4}`} ></Link>
-                    </SvgButton>
-                </div>
+                </div>               
+                    <div className={+id === (arrBackground.length-1) ? styles.hidden : ""} onMouseOver={handleMouseEnter} onMouseOut={handleMouseLeave} >
+                        <SvgButton onClick={() => { }} >
+                            <div className={cl(styles.button)} >
+                                <span>Next</span>
+                                <svg width="25.310669" height="11.506348" viewBox="0 0 25.3107 11.5063" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                    <desc>
+                                        Created with Pixso.
+                                    </desc>
+                                    <defs />
+                                    <path id="Vector 84" className={isActiveButton ? styles.buttonSvgActive : styles.buttonSvg} d="M0.75 5.75L24.25 5.75M19.25 10.75L24.25 5.75L19.25 0.75" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <Link to={`/${(+id + 1) % 4}`}  ></Link>
+                        </SvgButton>
+                    </div>
             </div>
             <img src={arrImage[+id]} alt="Title Page" className={cl(styles.sectionImg)} />
             <div className={cl(styles.sectionDescribe)}>
