@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import cl from 'classnames';
 
 import '@/styles/global.scss';
 import '../styles/reset.scss';
@@ -25,8 +26,9 @@ export const App = () => {
 
 
             <BrowserRouter>
-
-                <Navigation links={links} />
+                <div className={cl(classes.navigate)} >
+                    <Navigation links={links} />
+                </div>
                 <Home />
                 <Routes>
                     <Route path="/" element={<FactionPage />} />

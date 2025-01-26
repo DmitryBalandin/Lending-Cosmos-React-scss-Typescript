@@ -28,12 +28,12 @@
     }
 
     header {
-        width: calc(100% - 100px) ;
+        width: calc(100% - 100px);
         position: absolute;
         display: grid;
         gap: 50px;
         grid-template: 100%/ 1fr auto auto;
-        
+
     }
 
 
@@ -44,4 +44,19 @@
     background: inherit;
     display: flex;
     gap: 20px;
+}
+
+.rightButton {
+    @media(max-width: 768px) {
+        display: none;
+    }
+}
+
+.socialNetyworks {
+    display: flex;
+    align-items: center;
+
+    @media(max-width:576px) {
+        display: none;
+    }
 }

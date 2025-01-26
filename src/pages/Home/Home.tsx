@@ -15,10 +15,15 @@ export default function Home() {
             <header>
 
                 <Logo />
-                <SocialNetworks />
-                <SvgButton onClick={() => { }}>
-                    Whitepeper
-                </SvgButton>
+                <div className={cl(styles.socialNetyworks)}>
+                    <SocialNetworks />
+                </div>
+                <div className={cl(styles.rightButton)}>
+                    <SvgButton onClick={() => { }}>
+                        Whitepeper
+                    </SvgButton>
+                </div>
+
             </header>
             <div className={cl(styles.sectionTitleMain)}>
                 <div>
@@ -39,7 +44,7 @@ export default function Home() {
                     </ul>
                 </div>
             </div>
-            
+
         </section>
     )
 } 
