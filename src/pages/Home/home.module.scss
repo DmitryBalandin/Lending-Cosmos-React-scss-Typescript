@@ -60,3 +60,11 @@
         display: none;
     }
 }
+
+.burgerMenu{
+    display: none;
+    @media(max-width: 576px){
+        display: flex;
+        align-items: center;
+    }
+}

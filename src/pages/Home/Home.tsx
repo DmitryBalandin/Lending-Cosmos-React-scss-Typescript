@@ -7,6 +7,7 @@ import { Title } from "@/componenets/Titile";
 import { SvgButton } from './../../componenets/SvgButton/index';
 import React from "react";
 import { Outlet } from "react-router-dom";
+import { BurgerMenu } from "@/componenets/BurgerMenu";
 
 
 export default function Home() {
@@ -17,6 +18,9 @@ export default function Home() {
                 <Logo />
                 <div className={cl(styles.socialNetyworks)}>
                     <SocialNetworks />
+                </div>
+                <div className={cl(styles.burgerMenu)}>
+                    <BurgerMenu/>
                 </div>
                 <div className={cl(styles.rightButton)}>
                     <SvgButton onClick={() => { }}>
