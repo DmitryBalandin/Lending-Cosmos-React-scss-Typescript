@@ -5,32 +5,32 @@ import cl from "classnames";
 import { SocialNetworks } from "@/componenets/SocialNetworks";
 import { Title } from "@/componenets/Titile";
 import { SvgButton } from './../../componenets/SvgButton/index';
-import React from "react";
+import {useState} from "react";
 import { Outlet } from "react-router-dom";
 import { BurgerMenu } from "@/componenets/BurgerMenu";
 
 
 export default function Home() {
+    const [inputCheck, setInputCheck] = useState(false)
+
     return (
         <section className={cl(styles.section, styles.sectionMain)}>
             <header>
-
                 <Logo />
                 <div className={cl(styles.socialNetyworks)}>
                     <SocialNetworks />
                 </div>
                 <div className={cl(styles.burgerMenu)}>
-                    <BurgerMenu/>
+                    <BurgerMenu inputCheck={inputCheck} setInputCheck={setInputCheck}/>
                 </div>
                 <div className={cl(styles.rightButton)}>
                     <SvgButton onClick={() => { }}>
                         Whitepeper
                     </SvgButton>
                 </div>
-
             </header>
             <div className={cl(styles.sectionTitleMain)}>
-                <div>
+                <div style={inputCheck ? {visibility:'hidden'} : null}>
                     <Title size="Medium">
                         From dusk to&nbsp;dawn
                     </Title>

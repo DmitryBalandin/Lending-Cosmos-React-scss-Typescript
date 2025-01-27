@@ -54,7 +54,7 @@ $borderButton: 1px;
                 calc(0.00% + $borderButton) calc(10.00% + $borderButton));
         line-height: 140%;
         opacity: 1;
-        transition: all 1s, color 1s;
+        transition: background 1s, color 1s;
 
 
         z-index: 1;

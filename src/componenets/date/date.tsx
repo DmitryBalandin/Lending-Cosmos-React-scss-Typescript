@@ -16,8 +16,8 @@ const links: Array<Links> = [
     },
     {
         id: 1,
-        title: "Factiion",
-        link: '/Factiion',
+        title: "Faction",
+        link: '/Faction',
         isActiv: false
     },
     {
@@ -28,8 +28,8 @@ const links: Array<Links> = [
     },
     {
         id: 3,
-        title: "Partners",
-        link: '/Partners',
+        title: "Collaboration",
+        link: '/Collaboration',
         isActiv: false
     },
     {
@@ -40,8 +40,8 @@ const links: Array<Links> = [
     },
     {
         id: 5,
-        title: "Members",
-        link: '/Members',
+        title: "Team",
+        link: '/Team',
         isActiv: false
     },
 
