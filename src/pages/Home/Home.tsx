@@ -11,7 +11,7 @@ import { BurgerMenu } from "@/componenets/BurgerMenu";
 
 
 export default function Home() {
-    const [inputCheck, setInputCheck] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
 
     return (
         <section className={cl(styles.section, styles.sectionMain)}>
@@ -21,16 +21,17 @@ export default function Home() {
                     <SocialNetworks />
                 </div>
                 <div className={cl(styles.burgerMenu)}>
-                    <BurgerMenu inputCheck={inputCheck} setInputCheck={setInputCheck}/>
+                    <BurgerMenu isOpen={isOpen} setIsOpen={setIsOpen}/>
                 </div>
                 <div className={cl(styles.rightButton)}>
                     <SvgButton onClick={() => { }}>
                         Whitepeper
                     </SvgButton>
                 </div>
+
             </header>
             <div className={cl(styles.sectionTitleMain)}>
-                <div style={inputCheck ? {visibility:'hidden'} : null}>
+                <div style={isOpen ? {visibility:'hidden'} : null}>
                     <Title size="Medium">
                         From dusk to&nbsp;dawn
                     </Title>

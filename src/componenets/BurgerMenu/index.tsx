@@ -6,19 +6,19 @@ import { links } from "../date/date";
 import star from './images/star.png';
 import { SocialNetworks } from "../SocialNetworks";
 interface BurgerMenuProps {
-    inputCheck: boolean;
-    setInputCheck: React.Dispatch<React.SetStateAction<boolean>>
+    isOpen: boolean;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const BurgerMenu: React.FC<BurgerMenuProps> = ({ inputCheck, setInputCheck }) => {
+export const BurgerMenu: React.FC<BurgerMenuProps> = ({ isOpen, setIsOpen }) => {
 
-    const handleClick = () => setInputCheck(() => !inputCheck);
+    const handleClick = () => setIsOpen (() => !isOpen);
 
     return (
         <>
-            <input type="checkbox" className={cl(styles.burgerCheckbox)} checked={inputCheck} />
+            <input type="checkbox" className={cl(styles.burgerCheckbox)} checked={isOpen} />
             <label className={cl(styles.burgerLabel)} onClick={handleClick} htmlFor={cl(styles.burgerCheckbox)}></label>
-            <div className={cl(styles.burgerContainer)}>
+            <div className={cl(styles.burgerContainer)} style={!isOpen ? {transform:'translateX(+100%)'} : null}>
                 <ul className={cl(styles.burgerMenu)}>
                     {links.map((link, index, array) => {
                         return (
