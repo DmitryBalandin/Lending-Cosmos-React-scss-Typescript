@@ -1,10 +1,12 @@
 import styles from "./styles.module.scss";
 import cl from "classnames";
-import { Link, Outlet } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import React, { Fragment, useState, useEffect } from "react";
 import star from './images/star.png';
 import { Links } from "../date/date";
-import { moveToSection, funcMadeCallback } from "./helpers/helpers";
+import {  funcMadeCallback } from "./helpers/helpers";
+import { moveToSection } from "../date/helpers";
+
 
 interface NavigationProps {
     links: Array<Links>

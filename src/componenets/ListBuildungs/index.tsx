@@ -12,7 +12,8 @@ interface ListBuildungsProps {
 
 export const ListBuildungs: React.FC<ListBuildungsProps> = ({ size, positionCarusel }) => {
 
-    const amountRow = ["Small", "Medium", "Large", "Xlarge"].indexOf(size) + 1;
+    const amountRow = (["Small", "Medium", "Large", "Xlarge"].indexOf(size) + 1) < 1 ? 1 :
+                        ["Small", "Medium", "Large", "Xlarge"].indexOf(size) + 1;
 
     const stylesPositionCarusel = {
         transform: `translateY(min(0px,calc(-${positionCarusel | 0}% + ${260 * 0.01 * positionCarusel}px)))`

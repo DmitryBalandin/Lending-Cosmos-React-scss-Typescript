@@ -1,11 +1,14 @@
-interface Links {
-    id: number;
-    title: string;
-    link: string;
-    isActiv: boolean;
-}
+import { SizeScreen,Links } from "@/globalType";
 
 
+
+const arrSize:Array<SizeScreen> = [
+    {name: "Smallest", size:577},
+    { name:"Small", size: 720 },
+    { name:"Medium", size: 1020 },
+    { name:"Large", size: 1320 },
+    { name:"Xlarge", size: Infinity },
+];
 
 const links: Array<Links> = [
     {
@@ -48,4 +51,5 @@ const links: Array<Links> = [
 ];
 
 
-export {Links, links};
+
+export {Links, links, arrSize};

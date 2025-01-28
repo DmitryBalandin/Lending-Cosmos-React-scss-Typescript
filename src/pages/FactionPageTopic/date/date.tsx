@@ -3,19 +3,11 @@ import img2 from '../image/GLACIAL TITLE 2.png';
 import img3 from '../image/GROVE TITLE 3.png';
 import img4 from '../image/SKY TITLE 4.png';
 
-import { SizeScreen } from '@/globalType';
-
-
 
 const arrImage = [img1, img2, img3, img4];
 
 const arrBackground = ['0', '1', '2', '3'];
-const arrSize:Array<SizeScreen> = [
-    { name:"Small", size: 720 },
-    { name:"Medium", size: 1020 },
-    { name:"Large", size: 1320 },
-    { name:"Xlarge", size: Infinity },
-];
+
 
 const describePage:Array<Array<string>> = [
     ['Modern-day Dusktopia begins here',
@@ -41,4 +33,4 @@ const describePage:Array<Array<string>> = [
 ];
 
 
-export { arrBackground, describePage,arrSize, arrImage, SizeScreen }
+export { arrBackground, describePage,arrImage}

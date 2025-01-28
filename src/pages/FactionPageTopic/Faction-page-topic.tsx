@@ -5,21 +5,19 @@ import { SvgButton } from "@/componenets/SvgButton";
 import { RangeSvg } from "@/componenets/RangeSvg";
 import { ListBuildungs } from "@/componenets/ListBuildungs";
 
-import { handlerMouse, constuctorResizeHandler, throttle } from "./helpers/helpers";
-import { arrBackground, describePage, arrSize, arrImage } from "./date/date";
+
+import { handlerMouse } from "./helpers/helpers";
+import { arrBackground, describePage, arrImage } from "./date/date";
 import { NameSize } from "@/globalType";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 
-interface FactionPageTopic { };
+interface FactionPageTopic { 
+    calcSizeScreen:NameSize;
+};
 
-export const FactionPageTopic: React.FC<FactionPageTopic> = ({ }) => {
-
-    const [calcSizeScreen, setcalcSizeScreen] = useState<NameSize>(
-        () => {
-            return arrSize.find(item => item.size >= window.innerWidth).name;
-        })
+export const FactionPageTopic: React.FC<FactionPageTopic> = ({calcSizeScreen }) => {
 
 
     const [isActiveButton, setIsActiveButton] = useState<boolean>(false);
@@ -28,16 +26,7 @@ export const FactionPageTopic: React.FC<FactionPageTopic> = ({ }) => {
 
     const handleMouseEnter = handlerMouse(setIsActiveButton, true);
     const handleMouseLeave = handlerMouse(setIsActiveButton, false);
-
-    let resizeHandler = constuctorResizeHandler(arrSize, setcalcSizeScreen);
-    resizeHandler = throttle(resizeHandler, 200);
-
-    useEffect(() => {
-        window.addEventListener('resize', resizeHandler);
-        resizeHandler();
-        return () => { window.removeEventListener('resize', resizeHandler) };
-    }, [])
-
+  
     const { id } = useParams()
 
     return (

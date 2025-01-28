@@ -1,3 +1,4 @@
+import React from "react";
 
 import { Logo } from "@/componenets/Logo";
 import styles from "./home.module.scss";
@@ -5,13 +6,22 @@ import cl from "classnames";
 import { SocialNetworks } from "@/componenets/SocialNetworks";
 import { Title } from "@/componenets/Titile";
 import { SvgButton } from './../../componenets/SvgButton/index';
-import {useState} from "react";
-import { Outlet } from "react-router-dom";
+import {useState, useEffect} from "react";
+import { NameSize } from "@/globalType";
 import { BurgerMenu } from "@/componenets/BurgerMenu";
 
+interface HomeProps{
+    calcSizeScreen:NameSize
+}
 
-export default function Home() {
+export  const Home:React.FC<HomeProps> = ({calcSizeScreen}) => {
     const [isOpen, setIsOpen] = useState(false)
+    
+    useEffect(() =>{
+        if(calcSizeScreen !== 'Smallest'){
+            setIsOpen(false);
+        }
+    }, [calcSizeScreen])
 
     return (
         <section className={cl(styles.section, styles.sectionMain)}>
@@ -31,7 +41,7 @@ export default function Home() {
 
             </header>
             <div className={cl(styles.sectionTitleMain)}>
-                <div style={isOpen ? {visibility:'hidden'} : null}>
+                <div style={isOpen  ?  {visibility:'hidden'} :null }>
                     <Title size="Medium">
                         From dusk to&nbsp;dawn
                     </Title>

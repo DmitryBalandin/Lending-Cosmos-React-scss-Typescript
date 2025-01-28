@@ -3,13 +3,6 @@ import { Links } from "@/componenets/date/date";
 
 
 
-const moveToSection = (event: React.MouseEvent<HTMLElement>, link: Links, arrSection: HTMLCollectionOf<Element>): void => {
-    event.preventDefault();
-    if(!arrSection[link.id]){return}
-    
-    arrSection[link.id].scrollIntoView({ block: "start", behavior: "smooth" });
-}
-
 const funcMadeCallback = (links: Array<Links>, setNavigatorVisiable: React.Dispatch<React.SetStateAction<Array<Links>>>) => {
 
     const callback = (entries: any) => {
@@ -37,4 +30,4 @@ const funcMadeCallback = (links: Array<Links>, setNavigatorVisiable: React.Dispa
 }
 
 
-export { moveToSection, funcMadeCallback };
+export { funcMadeCallback };

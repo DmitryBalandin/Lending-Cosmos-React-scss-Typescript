@@ -5,6 +5,8 @@ import cl from 'classnames';
 import { links } from "../date/date";
 import star from './images/star.png';
 import { SocialNetworks } from "../SocialNetworks";
+import { moveToSection } from "../date/helpers";
+
 interface BurgerMenuProps {
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
@@ -12,19 +14,26 @@ interface BurgerMenuProps {
 
 export const BurgerMenu: React.FC<BurgerMenuProps> = ({ isOpen, setIsOpen }) => {
 
-    const handleClick = () => setIsOpen (() => !isOpen);
+    const handleClick = () => setIsOpen(() => !isOpen);
+    const arrEntriesSection = window.document.getElementsByTagName("SECTION");
+
 
     return (
         <>
             <input type="checkbox" className={cl(styles.burgerCheckbox)} checked={isOpen} />
             <label className={cl(styles.burgerLabel)} onClick={handleClick} htmlFor={cl(styles.burgerCheckbox)}></label>
-            <div className={cl(styles.burgerContainer)} style={!isOpen ? {transform:'translateX(+100%)'} : null}>
+            <div className={cl(styles.burgerContainer)} style={!isOpen ? { transform: 'translateX(+100%)' } : null}>
                 <ul className={cl(styles.burgerMenu)}>
                     {links.map((link, index, array) => {
                         return (
                             <Fragment key={`${link.id}${link.title}`}>
                                 <li className={cl(styles.burgerMenuTitle)}>
-                                    <Link className={cl(styles.burgerMenuLink)} to='/'>
+                                    <Link className={cl(styles.burgerMenuLink)}
+                                        onClick={(event) => {moveToSection(event, link, arrEntriesSection)
+                                            setIsOpen(false)}
+                                        }
+                                        to={link.link}
+                                    >
                                         {link.title}
                                     </Link>
                                 </li>
@@ -34,7 +43,7 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ isOpen, setIsOpen }) => 
                     })}
                 </ul>
                 <div className={cl(styles.burgerSocialNetworks)}>
-                     <SocialNetworks/>    
+                    <SocialNetworks />
                 </div>
             </div>
         </>
