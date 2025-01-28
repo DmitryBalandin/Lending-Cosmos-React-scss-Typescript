@@ -5,13 +5,16 @@
     overflow: hidden;
     &Roadmap {
         position: relative;
-
+        
         background-image: rgb(31, 33, 47);
         background-image: linear-gradient(0deg, rgba(31, 33, 47, 1) 0%, rgba(58, 41, 68, 1) 100%);
          
 
         background-size: cover;
         padding: 85px 50px;
+        @media(max-width:500px){
+            padding: 85px 10px;
+        }
 
         &::before {
             content: "";
@@ -30,15 +33,22 @@
 
 .menu{
     display: flex;
-    
     gap: 50px;
-
+    @media(max-width:500px){
+        gap:20px
+    }
     &SVGnavigation{
         padding-top: 50px;
     }
 }
 .container{
     margin-left: 125px;
+    @media(max-width:800px){
+        margin-left: 50px;
+    }
+    @media(max-width:500px){
+        margin-left: 0;
+    }
 }
 .titleSection{
     margin-bottom:17px;

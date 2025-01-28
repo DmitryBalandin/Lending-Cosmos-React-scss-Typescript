@@ -2,9 +2,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     height: 100%;
-    
+
+    @media(max-width:768px) {
+        gap: 40px;
+    }
+
     &Container {
         display: inline-block;
         position: relative;
@@ -20,6 +23,11 @@
         text-align: left;
         transition: 1s;
 
+        @media(max-width:768px) {
+            width: max(90%, 228px)
+        }
+
+
         &:before {
             position: absolute;
             content: url(./image/Vector.svg);
@@ -28,12 +36,13 @@
             z-index: 1;
             width: 18px;
             height: 18px;
-            
+
         }
+
         &::after {
             position: absolute;
             content: url(./image/Vector.svg);
-            right:5px;
+            right: 5px;
             top: 13px;
             z-index: 1;
             transform: rotate(180deg);
@@ -49,6 +58,10 @@
             opacity: 0.85;
             transition: 1s;
 
+            @media(max-width:768px) {
+                width: max(100%, 243px)
+            }
+
             &:before {
                 position: absolute;
                 content: url(./image/VectorIsActive.svg);
@@ -57,16 +70,17 @@
                 z-index: 1;
                 width: 18px;
                 height: 18px;
-                
+
             }
+
             &::after {
                 position: absolute;
                 content: url(./image/VectorIsActive.svg);
-                right:5px;
+                right: 5px;
                 top: 13px;
                 z-index: 1;
                 transform: rotate(180deg);
-                
+
             }
         }
     }
@@ -74,6 +88,7 @@
     &Item {
         padding: 40px 30px 38px 26px;
         cursor: pointer;
+
         &Active {
             @extend .buttonCardsItem;
         }

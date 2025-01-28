@@ -1,12 +1,16 @@
 .container {
     height: max(200vh + 100px);
-    width: max(200%);
+    width: max(300%);
     overflow: hidden;
     padding-left: 250px;
     position: absolute;
     left: 0px;
     top:0px;
     z-index: -1;
+    @media(max-width:1200px){
+        left:calc(-1200px + 100%);
+        
+    }
     img{
         padding-top: 100px;
         width: 2000px;
