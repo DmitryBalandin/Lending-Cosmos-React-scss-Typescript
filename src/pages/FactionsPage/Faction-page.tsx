@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 import { SvgNavigation } from './../../componenets/svgNavigaion/index';
 import { SubTitle } from "@/componenets/subTitles";
 import { SvgButton } from "@/componenets/SvgButton";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { arrImage } from "./date/date";
 import { handleClick, State } from "./helpers/helpers";
 import { Link } from "react-router-dom";
@@ -31,7 +31,7 @@ export const FactionPage: React.FC<FactionPage> = ({ }) => {
                 <div className={cl(styles.navigaterItem)} onClick={handleClickNameTopic}>
                     {arrNameTopic.map((nameTopic, index) => {
                         if (index === statePage.isActive) {
-                            return (<>
+                            return (<Fragment key={nameTopic}>
                                 <SubTitle dataId={index} key={nameTopic} size="Medium" upperCase={true}>{nameTopic}</SubTitle>
                                 <div className={styles.navigaterOpenTitle}>
                                     <img src={arrImage[statePage.isActive]} alt="blihed badlans"
@@ -41,7 +41,7 @@ export const FactionPage: React.FC<FactionPage> = ({ }) => {
                                         <SvgButton onClick={() => { }}>More<Link to={`/${index}`} ></Link></SvgButton>
                                     </div>
                                 </div>
-                            </>)
+                            </Fragment>)
                         } else {
                             return <SubTitle dataId={index} key={nameTopic} size="Medium">{nameTopic}</SubTitle>
                         }
