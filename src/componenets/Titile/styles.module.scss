@@ -13,6 +13,10 @@
         @media (max-width: 1200px) {
             font-size: max(40px, 5vw);
         }
+        @media (max-width: 1200px) {
+            letter-spacing: min(1.4207rem, 6px);
+            font-size: max(38px, 5vw);
+        }
         @media(max-width: 576px){
             letter-spacing:8px;
             }

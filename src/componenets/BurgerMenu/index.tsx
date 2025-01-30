@@ -23,7 +23,7 @@ export const BurgerMenu: React.FC<BurgerMenuProps> = ({ isOpen, setIsOpen }) => 
             <input type="checkbox" className={cl(styles.burgerCheckbox)} checked={isOpen} />
             <label className={cl(styles.burgerLabel)} onClick={handleClick} htmlFor={cl(styles.burgerCheckbox)}></label>
             <div className={cl(styles.burgerContainer)} 
-            style={!isOpen ? { transform: 'translateX(100%)' } : null}
+            style={!isOpen ? { transform: 'translateX(-100%)' } : null}
             >
                 <ul className={cl(styles.burgerMenu)}>
                     {links.map((link, index, array) => {
