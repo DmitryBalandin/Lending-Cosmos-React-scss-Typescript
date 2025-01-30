@@ -6,6 +6,17 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(77, 10px);
 
+    @media(max-width:992px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(21,50px);
+    }
+    @media(max-width:690px){
+        height: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 11ch auto minmax(30px, 100px);
+         padding-top: 30px;     
+    }
+
 }
 
 .item {
@@ -14,7 +25,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    @media(max-width:690px){
+        border: none;
+        border-bottom: 1px solid white;
+    }
+    
 
     &Container {
         padding: 0 20px;
@@ -46,50 +61,130 @@
 .item1 {
     grid-column: 1;
     grid-row: 1/22;
+
+    @media(max-width:992px) {
+        grid-column:1;
+        grid-row:1/4;
+    }
+    @media(max-width:690px){
+        grid-column: auto;
+        grid-row: auto;
+    }
 }
 
 
 .item2 {
     grid-column: 1;
     grid-row: 28/57;
+    @media(max-width:992px) {
+        grid-column:2;
+        grid-row:1/8;
+        border-right: none;
+    }
+    @media(max-width:690px){
+        grid-column: auto;
+        grid-row: auto;
+    }
 }
 
 .item3 {
     grid-column: 1;
     grid-row: 57/78;
+    @media(max-width:992px) {
+        grid-column:1;
+        grid-row:4/8;
+    }
+    @media(max-width:690px){
+        grid-column: auto;
+        grid-row: auto;
+    }
 }
 
 .item4 {
     grid-column: 2;
     grid-row: 1/19;
+    @media(max-width:992px) {
+        grid-column:1;
+        grid-row:8/11;
+    }
+    @media(max-width:690px){
+        grid-column: auto;
+        grid-row: auto;
+    }
 }
 
 .item5 {
     grid-column: 2;
     grid-row: 19/42;
+    @media(max-width:992px) {
+        grid-column:2;
+        grid-row:8/11;
+        border-right: none;
+    }
+    @media(max-width:690px){
+        grid-column: auto;
+        grid-row: auto;
+    }
 }
 
 .item6 {
     grid-column: 2;
-    grid-row: 42/65
+    grid-row: 42/65;
+    @media(max-width:992px) {
+        grid-column:1;
+        grid-row:11/14;
+    }
+    @media(max-width:690px){
+        grid-column: auto;
+        grid-row: auto;
+    }
 }
 
 .item7 {
     grid-column: 3;
     grid-row: 1/22;
     border-right: none;
+    @media(max-width:992px) {
+        grid-column:2;
+        grid-row:11/15;
+    }
+    @media(max-width:690px){
+        grid-column: auto;
+        grid-row: auto;
+    }
 }
 
 .item8 {
     grid-column: 3;
     grid-row: 22/54;
     border-right: none;
+    @media(max-width:992px) {
+        grid-column:1;
+        grid-row:14/20;
+        border-right: 1px solid white; ;
+    }
+    @media(max-width:690px){
+        grid-column: auto;
+        grid-row: auto;
+        border-right: none;
+        border-bottom: 1px soid white;
+    }
 }
 
 .item9 {
     grid-column: 3;
     grid-row: 54/78;
     border-right: none;
+    @media(max-width:992px) {
+        grid-column:2;
+        grid-row:15/20;
+    }
+    @media(max-width:690px){
+        grid-column: auto;
+        grid-row: auto;
+        border-bottom: 1px soid white;
+        
+    }
 }
 
 .item10 {
@@ -98,11 +193,19 @@
     display: flex;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
-    ;
-    
+    @media(max-width:992px) {
+        grid-column:1;
+        grid-row:20/22;
+    }
+    @media(max-width:690px){
+        grid-column: auto;
+        grid-row: auto;
+        border-right: none;
+    }
 
-    &ContainerLine{
-        
+
+    &ContainerLine {
+
         flex-grow: 1;
         border-right: 1px solid white;
         display: flex;
@@ -110,7 +213,7 @@
         justify-content: center;
     }
 
-    &ContainerStar{
+    &ContainerStar {
         flex-grow: 1;
         border-right: 1px solid white;
         display: flex;
@@ -119,12 +222,12 @@
         gap: 10px;
     }
 
-    &ContainerEye{
+    &ContainerEye {
         flex-grow: 1;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap:4px;
+        gap: 4px;
     }
 
 }
@@ -135,8 +238,17 @@
     display: flex;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
-   
-    &ContainerSun{    
+    @media(max-width:992px) {
+        grid-column:2;
+        grid-row:20/22;
+        border-right:none;
+    }
+    @media(max-width:690px){
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    &ContainerSun {
         flex-grow: 1;
         border-right: 1px solid white;
         display: flex;
@@ -144,11 +256,11 @@
         justify-content: center;
     }
 
-    &ContainerArrow{
+    &ContainerArrow {
         flex-grow: 1;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap:13px
+        gap: 13px
     }
 }
