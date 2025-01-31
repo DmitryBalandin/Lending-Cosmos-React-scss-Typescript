@@ -17,14 +17,14 @@ const arrCardCustomer: Array<CardCustomer> = [
     {
         avatar: avatar1,
         career: "Co-founder / Ecosystem Chief",
-        login: "@jaypegsonly",
+        login: "@jaypeggsonly",
         description: "@jaypegsonly was a corporate finance lawyer at a top global firm who has advised institutional clients, MNCs and VCs. He has worked on deals well over US$1B. Having delved into NFTs since July 2021, he brings his expertise and connections from Web2 into the Web3 world. With all these resources and experience, he aims to build a sustainable, scaleable ecosystem with Dusktopia",
         isActive: true,
     },
     {
         avatar: avatar2,
         career: "Co-founder / Operations Chief",
-        login: "@0xSUPERPOTATO",
+        login: "@0xSUPERHEROPOTATO",
         description: "@jaypegsonly was a corporate finance lawyer at a top global firm who has advised institutional clients, MNCs and VCs. He has worked on deals well over US$1B. Having delved into NFTs since July 2021, he brings his expertise and connections from Web2 into the Web3 world. With all these resources and experience, he aims to build a sustainable, scaleable ecosystem with Dusktopia",
         isActive: false,
     },

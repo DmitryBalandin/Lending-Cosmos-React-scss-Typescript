@@ -14,7 +14,7 @@ export const Carausel: React.FC<Carausel> = ({ arrCardCustomers }) => {
 
     const [listActiveCard, setlistActiveCard] = useState<Array<CardCustomer>>(() => arrCardCustomers);
     const [leftOffsetCarusel, setLeftOffsetCarusel] = useState<string>("0px");
-    const selectActiveCard = helper(styles, listActiveCard, setlistActiveCard);
+    const selectActiveCard = helper(styles, listActiveCard, setlistActiveCard,setLeftOffsetCarusel);
 
 
     const handleOnMouseDown = (event: EventMouse<HTMLDivElement, any>) => {
