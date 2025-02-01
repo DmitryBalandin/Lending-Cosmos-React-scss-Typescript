@@ -2,7 +2,7 @@
 import React, { ChangeEvent } from "react"
 import { CardCustomer } from "@/pages/Members/date/arrCardCustomer"
 import { IClassNames, EventMouse } from "@/globalType"
-import { dir } from "console"
+
 
 
 
@@ -15,36 +15,39 @@ export const helper = (styles: IClassNames,
 
     const isBefore = (list: Array<CardCustomer>, elem: any) => {
         const posActiv = list.findIndex(card => card.isActive === true);
-        const posElem = list.findIndex(card => card.login === elem.dataset.key);
+        const posElem = list.findIndex(card => card.login === elem.dataset?.key);
         return posActiv === -1 ? false : posElem > posActiv;
+    }
+
+    function movingTo(shift: number) {
+        let directionShift = shift < 0 ? -1 : 1;
+
+
+        let starngeTime = directionShift * shift;
+        let inteval = setInterval(() => {
+            if (starngeTime > 0) {
+                setLeftOffsetCarusel(prev => `${parseFloat(prev) + 7 * (directionShift)}px`)
+                starngeTime = starngeTime - 7;
+            } else (clearInterval(inteval))
+        }, 16)
     }
 
     const selectActiveCard = (event: EventMouse<HTMLDivElement, any>) => {
         const target = event.target;
         let element = target.closest((`.${styles.customerContainerActive}`)) || target.closest((`.${styles.customerContainer}`))
-        console.log(element.dataset.key, +element.getBoundingClientRect().left);
 
-
-
-
+        if (!element) return
 
         let shiftLeft = 180 - +element.getBoundingClientRect().left;
-        
+
 
         if (isBefore(listActiveCard, element)) {
             shiftLeft = shiftLeft + 180;
         }
 
-          setLeftOffsetCarusel(prev => `${parseInt(prev) + shiftLeft}px`)
+        movingTo(shiftLeft)
 
-        // let inteval = setInterval(()=>{setLeftOffsetCarusel(prev => `${parseInt(prev) + shiftLeft / 500}px`)},2)
-        // setTimeout(() => clearInterval(inteval),1021)
-        console.log(shiftLeft/500)
         if (target.closest((`.${styles.customerActiveDescription}`))) {
-            return
-        }
-
-        if (!target.closest((`.${styles.customerContainerActive}`)) && !target.closest(`.${styles.customerContainer}`)) {
             return
         }
 
@@ -58,15 +61,11 @@ export const helper = (styles: IClassNames,
                         isActive: false
                     })
                 })
-
             )
-
             setlistActiveCard(newlist);
-
         }
 
         if (target.closest((`.${styles.customerContainer}`))) {
-
             const newlist = (
                 listActiveCard.map((card) => {
                     if (target.closest((`.${styles.customerContainer}`)).dataset.key === card.login) {
@@ -80,12 +79,9 @@ export const helper = (styles: IClassNames,
                             isActive: false
                         })
                     }
-
                 })
-
             )
             setlistActiveCard(newlist);
-
         }
 
 

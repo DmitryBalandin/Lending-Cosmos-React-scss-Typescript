@@ -31,7 +31,7 @@ export const Carausel: React.FC<Carausel> = ({ arrCardCustomers }) => {
         function onMouseMove(event: MouseEvent): void {
             let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
 
-            
+            console.log(slider.getBoundingClientRect())
 
             if (newLeft > 0) {
                 newLeft = 0;
