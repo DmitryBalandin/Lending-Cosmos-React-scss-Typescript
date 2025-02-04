@@ -26,9 +26,9 @@ export const MembersPage: React.FC<MembersPage> = ({ }) => {
             <div className={cl(styles.sectionMainTitle)}>
                 <Title size="Medium">MEET OUR TEAM </Title>
             </div>
-            <div>
+            
                 <Carausel arrCardCustomers={arrCardCustomer} />
-            </div>
+                
             <footer className={cl(styles.footer)}>
                 <Logo />
                 <SocialNetworks />

@@ -1,14 +1,22 @@
 .carausel {
     position: absolute;
      overflow: hidden;
-    
     width:100%;
     &Container {
         position: relative;
         display: flex;
-        gap: 20px;
-         
+        gap: 20px;    
     }
+    
+
+    @media(max-width:992px) {
+        overflow-y: visible;
+        overflow-x: visible;
+       
+    }
+    
+
+
 }
 
 
@@ -32,6 +40,7 @@ $height-indentActive: 13px;
         clip-path: polygon(0px 0px, $left-indent 0px, $right-indent $height-indent, 100% $height-indent, 100% calc(100% - $height-indent), calc(100% - $left-indent) calc(100% - $height-indent), calc(100% - $right-indent) 100%, 0px 100%);
         background: linear-gradient(205.05deg, rgba(255, 255, 255, 0) -95.064%, rgba(255, 255, 255, 0.3) 101.282%);
         cursor: pointer;
+        
 
         &:before {
             content: '';
@@ -48,7 +57,6 @@ $height-indentActive: 13px;
 
         &Active {
             position: relative;
-            // clip-path: polygon(0px 0px, $left-indentActive 0px, $right-indentActive $height-indentActive, 100% $height-indentActive, 100% calc(100% - $height-indentActive), calc(100% - $left-indentActive) calc(100% - $height-indentActive), calc(100% - $right-indentActive) 100%, 0px 100%);
             clip-path: polygon(0px 0px, $left-indentActive 0px, $right-indentActive $height-indentActive,
             100% $height-indentActive,
             100% 50%, 300% 50%,
@@ -62,6 +70,15 @@ $height-indentActive: 13px;
             background: rgb(255, 255, 255);
             flex-shrink: 0;
             cursor: pointer;
+            @media(max-width:992px) {
+               
+               clip-path: polygon(0px 0px, $left-indentActive 0px, $right-indentActive $height-indentActive,
+               100% $height-indentActive,
+               100% 50%, 300% 50%,
+               300% calc(100% - $height-indentActive),
+                300% calc(100% - $height-indentActive), 
+                calc(100% - $left-indentActive) calc(100% - $height-indentActive), calc(100% - $right-indentActive) 100%, 0px 100%);
+            }
 
             &:before {
                 content: '';
@@ -89,12 +106,14 @@ $height-indentActive: 13px;
     }
 
     &Avatar {
+        padding-top: 15px;
         width: 247.08px;
         height: 328.97px;
         object-fit: cover;
         margin-bottom: 13px;
 
         &Active {
+            padding-top: 35px;
             width: 411.8px;
             height: 548.28px;
             object-fit: cover;
@@ -162,6 +181,31 @@ $height-indentActive: 13px;
         z-index: 1;
         border: 2px solid rgb(184, 160, 160);
         cursor: auto;
-    }
 
+        @media(max-width:1300px){
+            width: 400px;      
+        }
+        @media(max-width:1200px){
+            width: 400px; 
+            padding: 10px;
+            width: 300px;     
+        }
+        @media(max-width: 992px){
+            left: 2px;
+            
+            bottom: -50px;
+            width: 418px;
+            border-top: 0;
+            border-left:0;
+            padding-top:25px;
+            transform: translateY(100px);
+            z-index: 1;
+            box-shadow: -7px 5px 0px -5px rgb(184, 160, 160);
+        }
+    }
+    
+
+}
+.bigContainer{
+    position: relative;
 }
