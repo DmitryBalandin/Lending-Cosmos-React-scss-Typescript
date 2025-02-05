@@ -53,7 +53,7 @@ export const App = () => {
                 <RoadMapPage />
                 <ColobrationsPage />
                 <FaqPage />
-                <MembersPage />
+                <MembersPage  calcSizeScreen={calcSizeScreen}/>
             </BrowserRouter>
 
 

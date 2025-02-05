@@ -4,8 +4,8 @@ import { SizeScreen,Links } from "@/globalType";
 
 const arrSize:Array<SizeScreen> = [
     {name: "Smallest", size:577},
-    { name:"Small", size: 720 },
-    { name:"Medium", size: 1020 },
+    { name:"Small", size: 768 },
+    { name:"Medium", size: 992 },
     { name:"Large", size: 1320 },
     { name:"Xlarge", size: Infinity },
 ];

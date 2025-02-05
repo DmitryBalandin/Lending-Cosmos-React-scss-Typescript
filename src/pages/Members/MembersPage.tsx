@@ -7,13 +7,14 @@ import { Logo } from "@/componenets/Logo";
 import { SocialNetworks } from "@/componenets/SocialNetworks";
 import { Carausel } from "@/componenets/Carausel";
 import { arrCardCustomer, CardCustomer } from "./date/arrCardCustomer";
+import { NameSize } from "@/globalType";
 
 interface MembersPage {
-
+    calcSizeScreen:NameSize
 }
 
 
-export const MembersPage: React.FC<MembersPage> = ({ }) => {
+export const MembersPage: React.FC<MembersPage> = ({calcSizeScreen}) => {
 
     return (
         <section className={cl(styles.section)}>
@@ -27,7 +28,7 @@ export const MembersPage: React.FC<MembersPage> = ({ }) => {
                 <Title size="Medium">MEET OUR TEAM </Title>
             </div>
             
-                <Carausel arrCardCustomers={arrCardCustomer} />
+                <Carausel arrCardCustomers={arrCardCustomer} calcSizeScreen={calcSizeScreen} />
                 
             <footer className={cl(styles.footer)}>
                 <Logo />

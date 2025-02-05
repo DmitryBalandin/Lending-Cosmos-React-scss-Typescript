@@ -22,6 +22,9 @@
         overflow-x: visible;
         
     }
+    @media(max-width: 768px){
+        overflow: hidden;
+    }
 
 
 
