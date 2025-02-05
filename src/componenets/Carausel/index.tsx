@@ -1,9 +1,10 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useLayoutEffect } from "react";
 import cl from "classnames";
 import styles from './styles.module.scss';
 import { CardCustomer } from "@/pages/Members/date/arrCardCustomer";
 import { helper } from "./helpers/selectActiveCard";
 import { EventMouse } from "@/globalType";
+
 interface Carausel {
     arrCardCustomers: Array<CardCustomer>
 }
@@ -14,15 +15,35 @@ export const Carausel: React.FC<Carausel> = ({ arrCardCustomers }) => {
 
     const [listActiveCard, setlistActiveCard] = useState<Array<CardCustomer>>(() => arrCardCustomers);
     const [leftOffsetCarusel, setLeftOffsetCarusel] = useState<string>("0px");
+    // const [switchChangeListCards, setSwitchChangeListCards] = useState<number>(0)
+
     const selectActiveCard = helper(styles, listActiveCard, setlistActiveCard, setLeftOffsetCarusel);
+    // useLayoutEffect(() => {
+    //     console.log(leftOffsetCarusel)
+    //     if (switchChangeListCards != 0) {
+    //         setLeftOffsetCarusel(prev => `${parseFloat(prev) + 285}px`);
+    //         setlistActiveCard(() => changeListCarusel(listActiveCard))
+    //         console.log("render")
+    //         console.log(leftOffsetCarusel)
+    //     }
 
+    // }, [switchChangeListCards]);
+    
+        
+    
 
+    // function changeListCarusel(listActiveCard: Array<CardCustomer>) {
+    //     const lastCardCustom: CardCustomer = Object.assign(listActiveCard[0]);
+    //     let changeListCards: Array<CardCustomer> = [...listActiveCard.slice(1), lastCardCustom]
+    //     return changeListCards
+    // }
+
+    
     const handleOnMouseDown = (event: EventMouse<HTMLDivElement, any>) => {
         event.preventDefault();
         const target = event.target.closest((`.${styles.carauselContainer}`));
         const slider = event.target.closest('#slider')
         let shiftX = event.clientX - target.getBoundingClientRect().left;
-
 
 
         document.addEventListener('mousemove', onMouseMove);
@@ -31,8 +52,15 @@ export const Carausel: React.FC<Carausel> = ({ arrCardCustomers }) => {
 
         function onMouseMove(event: MouseEvent): void {
             let newLeft = event.clientX - shiftX - slider.getBoundingClientRect().left;
+            
 
-
+            // if (target.getBoundingClientRect().left < -1000) {
+            //     document.removeEventListener('mousemove', onMouseMove);
+                
+                
+            //     setSwitchChangeListCards(prev => ++prev);
+            //     // setTimeout(() =>document.addEventListener('mousemove', onMouseMove),10);
+            // }
 
             if (newLeft > 0) {
                 newLeft = 0;
@@ -49,7 +77,11 @@ export const Carausel: React.FC<Carausel> = ({ arrCardCustomers }) => {
             setLeftOffsetCarusel(`${newLeft}px`)
 
         }
+
+
+       
         function onMouseUp() {
+
             document.removeEventListener('mouseup', onMouseUp);
             document.removeEventListener('mousemove', onMouseMove);
 
@@ -76,26 +108,26 @@ export const Carausel: React.FC<Carausel> = ({ arrCardCustomers }) => {
                                         <div className={card.isActive ? cl(styles.customerLoginActive) : cl(styles.customerLogin)}>{card.login}</div>
 
                                     </div>
-                                   
+
                                 </div>
                                 {card.isActive ? <div className={cl(styles.customerActiveDescription)}>
-                                        {card?.description}
-                                    </div> : ""}
+                                    {card?.description}
+                                </div> : ""}
                             </div>
-                            
-                                // <div key={card.login} data-key={card.login} className={card.isActive ? cl(styles.customerContainerActive) : cl(styles.customerContainer)}>
-                                //     <div className={card.isActive ? cl(styles.customerItemActive) : cl(styles.customerItem)}>
-                                //         <img className={card.isActive ? cl(styles.customerAvatarActive) : cl(styles.customerAvatar)} src={card.avatar} alt="Avatar" />
-                                //         <div className={card.isActive ? cl(styles.customerCareerActive) : cl(styles.customerCareer)}>{card.career}</div>
-                                //         <div className={card.isActive ? cl(styles.customerLoginActive) : cl(styles.customerLogin)}>{card.login}</div>
 
-                                //     </div>
-                                //     {card.isActive ? <div className={cl(styles.customerActiveDescription)}>
-                                //         {card?.description}
-                                //     </div> : ""}
-                                // </div>
-                                
-                            
+                            // <div key={card.login} data-key={card.login} className={card.isActive ? cl(styles.customerContainerActive) : cl(styles.customerContainer)}>
+                            //     <div className={card.isActive ? cl(styles.customerItemActive) : cl(styles.customerItem)}>
+                            //         <img className={card.isActive ? cl(styles.customerAvatarActive) : cl(styles.customerAvatar)} src={card.avatar} alt="Avatar" />
+                            //         <div className={card.isActive ? cl(styles.customerCareerActive) : cl(styles.customerCareer)}>{card.career}</div>
+                            //         <div className={card.isActive ? cl(styles.customerLoginActive) : cl(styles.customerLogin)}>{card.login}</div>
+
+                            //     </div>
+                            //     {card.isActive ? <div className={cl(styles.customerActiveDescription)}>
+                            //         {card?.description}
+                            //     </div> : ""}
+                            // </div>
+
+
                         )
                     })
                 }

@@ -6,7 +6,10 @@
     background: rgb(18, 23, 34);
     background: linear-gradient(0deg, rgba(18, 23, 34, 1) 0%, rgba(62, 35, 68, 1) 100%);
     user-select: none;
-    
+    @media(max-width:768px){
+        padding: 70px 0px;
+        height: max(300vh, 2000px);
+    }
     &EllipseOne {
         position: absolute;
         width: 636px;

@@ -24,7 +24,9 @@ export const helper = (styles: IClassNames,
         let directionShift = shift < 0 ? -1 : 1;
         let starngeTime = directionShift * shift;
 
-
+        if(window.innerWidth < 768){
+            return
+        }
         const elemDescriptionUser: Element = element?.nextElementSibling
         const witdhDescription: number = elemDescriptionUser?.getBoundingClientRect().width ? elemDescriptionUser?.getBoundingClientRect().width : 0;
         const witdthScreen: number = window.innerWidth;
