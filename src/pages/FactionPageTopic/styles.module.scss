@@ -4,6 +4,7 @@
     overflow: hidden;
     &Img{
         margin-bottom: 40px;
+        
     }
 
 
@@ -52,6 +53,19 @@
         display: flex;
         justify-content: space-between;
         margin-bottom: 105px;
+        align-items:center;
+        &Small{
+            @media(min-width: 769px){
+                display: none;
+            }
+        }
+        &Big{
+            @media(max-width: 768px){
+                display: none;
+                
+            }
+        }
+        
     }
 
     

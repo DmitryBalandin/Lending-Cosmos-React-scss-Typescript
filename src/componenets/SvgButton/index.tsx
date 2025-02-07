@@ -7,21 +7,22 @@ import React from "react";
 
 interface SvgButtonProps {
     onClick: () => void,
-    props?:any,
+    props?: any,
     children: ReactNode,
-    
+    iconSvg?: boolean
+
 }
 
-export const SvgButton: React.FC<SvgButtonProps> = ({ onClick, children,  ...props }) => {
+export const SvgButton: React.FC<SvgButtonProps> = ({ onClick, children, iconSvg, ...props }) => {
     return (
-            
-            <button onClick={(onClick)} {...props} className={cl(styles.button)}>
-                {children}
 
-                <span className={styles.buttonInsideBorder}>{children}</span>
-                <span className={styles.buttonOutsideBorder}></span>
-            </button>
-      
+        <button onClick={(onClick)} {...props} className={cl(`${styles.button}${iconSvg ? 'Svg' : ''}`)}>
+            {children}
+
+            {iconSvg ? '' : <span className={styles.buttonInsideBorder}>{children}</span>}
+            {iconSvg ? '' : <span className={styles.buttonOutsideBorder}></span>}
+        </button>
+
 
     )
 }

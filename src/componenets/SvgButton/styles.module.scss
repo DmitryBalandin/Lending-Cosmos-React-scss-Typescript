@@ -8,15 +8,25 @@ $borderButton: 1px;
     background: inherit;
     opacity: 1;
     z-index: 0;
-    
-    
-
-
     color: white;
     box-sizing: border-box;
     box-shadow: none;
     cursor: pointer;
     text-align: center;
+
+    &Svg {
+        box-sizing: border-box;
+        box-shadow: none;
+        display: block;
+        background: inherit;
+        border: none;
+
+    }
+
+
+
+
+
 
 
 
@@ -70,7 +80,7 @@ $borderButton: 1px;
 
 }
 
- .button a {
+.button a {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -81,11 +91,11 @@ $borderButton: 1px;
     &:visited {
 
         color: white;
-        
+
     }
 
     &:focus {
-        
+
         outline: none;
         color: black;
 
