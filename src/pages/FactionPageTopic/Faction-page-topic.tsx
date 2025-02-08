@@ -55,37 +55,33 @@ export const FactionPageTopic: React.FC<FactionPageTopic> = ({ calcSizeScreen })
                         </Link>
                     </SvgButton>
                 </div>
-                <div className={cl(styles.sectionNavButtonsBig)}>
-
-                <div className={+id === (arrBackground.length - 1) ? styles.hidden : ""} onMouseOver={handleMouseEnter} onMouseOut={handleMouseLeave} >
-                        <SvgButton onClick={() => { }} >
-                            <div className={cl(styles.button)} >
-                                <span>Next</span>
-                                <svg width="25.310669" height="11.506348" viewBox="0 0 25.3107 11.5063" fill="none" xmlns="http://www.w3.org/2000/svg" >
-                                    <desc>
-                                        Created with Pixso.
-                                    </desc>
-                                    <defs />
-                                    <path id="Vector 84" className={isActiveButton ? styles.buttonSvgActive : styles.buttonSvg} d="M0.75 5.75L24.25 5.75M19.25 10.75L24.25 5.75L19.25 0.75" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linecap="round" />
-                                </svg>
-                            </div>
-                            <Link to={`/${(+id + 1) % 4}`}  ></Link>
-                        </SvgButton>
-                    </div>
-                    <div className={cl(styles.sectionNavButtonSmall)}>
-                        <SvgButton onClick={() => { }} iconSvg={true}>
-                            <Link to={`/${(+id + 1) % 4}`} >
-                                <svg width="33.526367" height="19.232910" viewBox="0 0 33.5264 19.2329" fill="none" xmlns="http://www.w3.org/2000/svg" >
-                                    <desc>
-                                        Created with Pixso.
-                                    </desc>
-                                    <defs />
-                                    <path id="Vector 88" d="M32.11 9.61L1 9.61M23.5 18.22L32.11 9.61L23.5 1" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linecap="round" />
-                                </svg>
-                            </Link>
-                        </SvgButton>
-                    </div>
-
+                <div className={cl(styles.sectionNavButtonsBig, `${+id === (arrBackground.length - 1) ? styles.hidden : ""}`)} onMouseOver={handleMouseEnter} onMouseOut={handleMouseLeave} >
+                    <SvgButton onClick={() => { }} >
+                        <div className={cl(styles.button)} >
+                            <span>Next</span>
+                            <svg width="25.310669" height="11.506348" viewBox="0 0 25.3107 11.5063" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                <desc>
+                                    Created with Pixso.
+                                </desc>
+                                <defs />
+                                <path id="Vector 84" className={isActiveButton ? styles.buttonSvgActive : styles.buttonSvg} d="M0.75 5.75L24.25 5.75M19.25 10.75L24.25 5.75L19.25 0.75" stroke-opacity="1.000000" stroke-width="1.500000" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <Link to={`/${(+id + 1) % 4}`}  ></Link>
+                    </SvgButton>
+                </div>
+                <div className={cl(styles.sectionNavButtonsSmall, `${+id === (arrBackground.length - 1) ? styles.hidden : ""}`)}>
+                    <SvgButton onClick={() => { }} iconSvg={true}>
+                        <Link to={`/${(+id + 1) % 4}`} >
+                            <svg width="33.526367" height="19.232910" viewBox="0 0 33.5264 19.2329" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                <desc>
+                                    Created with Pixso.
+                                </desc>
+                                <defs />
+                                <path id="Vector 88" d="M32.11 9.61L1 9.61M23.5 18.22L32.11 9.61L23.5 1" stroke="#FFFFFF" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linecap="round" />
+                            </svg>
+                        </Link>
+                    </SvgButton>
                 </div>
             </div>
             <div className={cl(styles.sectionImg)}>
