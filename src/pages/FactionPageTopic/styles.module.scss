@@ -2,15 +2,40 @@
     position: relative;
     height: max(100vh - 70px, 800px);
     overflow: hidden;
-    &Img{
+    &ImgBig{
         margin-bottom: 40px;
-        
+        max-width: 90%;
+        @media(max-width: 768px){
+            display: none;
+            
+        }
+        img{
+            width: 100%;
+        }
+    }
+    &ImgSmall{
+        margin-bottom: 20px;
+        img{
+            display: block;
+            margin: auto;
+           
+        }
+        @media(min-width: 769px){
+            display: none;
+            
+        }
     }
 
 
     &FactionPageTopic {
         padding: 35px 50px 35px 130px;
         position: cover;
+        @media(max-width:576px){
+            padding-left: 30px;
+        }
+        @media(max-width:400px){
+            padding-left: 10px;
+        }
 
         &0 {
             background: url('./image/background1.jpeg') center no-repeat no-repeat;
@@ -36,6 +61,10 @@
         min-width: 400px;
         max-width: 848px;
         margin-bottom: 100px;
+        @media(max-width:576px){
+            min-width: 310px;
+            margin-bottom: 80px;
+        }
     }
 
     &Text {
@@ -47,6 +76,9 @@
         letter-spacing: 0%;
         text-align: left;
         text-transform: uppercase;
+        @media(max-width:576px){
+            font-size: 13px;
+        }
     }
 
     &NavButtons{
@@ -54,9 +86,13 @@
         justify-content: space-between;
         margin-bottom: 105px;
         align-items:center;
+        @media(max-width: 576px){
+            margin-bottom: 70px;
+        }
         &Small{
             @media(min-width: 769px){
                 display: none;
+                
             }
         }
         &Big{
@@ -92,6 +128,10 @@
     right: -150px;
     z-index: 2;
     bottom: 360px;
+    @media(max-width:576px){
+        right: -190px;
+        bottom: 220px;
+    }
 }
 
 .hidden{

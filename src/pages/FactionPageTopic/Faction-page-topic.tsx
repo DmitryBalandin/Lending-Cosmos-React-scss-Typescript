@@ -7,7 +7,7 @@ import { ListBuildungs } from "@/componenets/ListBuildungs";
 
 
 import { handlerMouse } from "./helpers/helpers";
-import { arrBackground, describePage, arrImage } from "./date/date";
+import { arrBackground, describePage, arrImageBig, arrImageSmall } from "./date/date";
 import { NameSize } from "@/globalType";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
@@ -84,8 +84,14 @@ export const FactionPageTopic: React.FC<FactionPageTopic> = ({ calcSizeScreen })
                     </SvgButton>
                 </div>
             </div>
-            <div className={cl(styles.sectionImg)}>
-                <img src={arrImage[+id]} alt="Title Page" className={cl(styles.sectionImgTitle)} />
+            <div className={cl(styles.sectionImgBig)}>
+                <img src={arrImageBig[+id]} alt="Title Page" className={cl(styles.sectionImgTitle)} />
+            </div>
+            <div className={cl(styles.sectionImgSmall)}>
+                {arrImageSmall[+id].map((img,index) =>{
+                    return (<img key={index} alt="Title Page" src={img}/>)
+                })}
+               
             </div>
             <div className={cl(styles.sectionDescribe)}>
                 {describePage[+id].map((text: string) => {

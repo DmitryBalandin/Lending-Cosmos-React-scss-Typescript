@@ -1,5 +1,5 @@
 .section {
-    height: max(200vh - 70px, 600px);
+    height: max(200vh - 70px, 1400px);
     position: relative;
     z-index: 0;
     overflow: hidden;
@@ -12,8 +12,8 @@
 
         background-size: cover;
         padding: 85px 50px;
-        @media(max-width:500px){
-            padding: 85px 10px;
+        @media(max-width:576px){
+            padding: 25px 10px;
         }
 
         &::before {
@@ -34,8 +34,8 @@
 .menu{
     display: flex;
     gap: 50px;
-    @media(max-width:500px){
-        gap:20px
+    @media(max-width:576px){
+        gap:15px
     }
     &SVGnavigation{
         padding-top: 50px;

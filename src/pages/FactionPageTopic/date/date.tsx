@@ -2,9 +2,16 @@ import img1 from '../image/BADLANDS TITLE 1.png';
 import img2 from '../image/GLACIAL TITLE 2.png';
 import img3 from '../image/GROVE TITLE 3.png';
 import img4 from '../image/SKY TITLE 4.png';
+import img100 from '../image/BADLANDS BIG.png';
+import img210 from '../image/GLACIAL BIG 0.png';
+import img211 from '../image/GLACIAL BIG 1.png';
+import img310 from '../image/GROVE BIG 0.png';
+import img311 from '../image/GROVE BIG 1.png';
+import img410 from '../image/SKY BIG 0.png';
+import img411 from '../image/SKY BIG 1.png';
 
-
-const arrImage = [img1, img2, img3, img4];
+const arrImageBig = [img1, img2, img3, img4];
+const arrImageSmall = [[img100],[img210,img211],[img310,img311],[img410,img411]];
 
 const arrBackground = ['0', '1', '2', '3'];
 
@@ -33,4 +40,4 @@ const describePage:Array<Array<string>> = [
 ];
 
 
-export { arrBackground, describePage,arrImage}
+export { arrBackground, describePage,arrImageBig, arrImageSmall}
